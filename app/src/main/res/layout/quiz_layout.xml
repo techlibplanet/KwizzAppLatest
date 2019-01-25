@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_marginTop="?actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space16dp"
+            android:layout_marginEnd="@dimen/space16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_view_question"
+                android:textStyle="bold"
+                style="@style/TitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space10dp"
+                android:text="@string/question"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorWhite" />
+
+            <android.support.v7.widget.CardView
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:id="@+id/layoutOptionA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space16dp"
+                app:cardCornerRadius="@dimen/space5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/space5dp"
+                        android:layout_marginStart="@dimen/space5dp"
+                        android:text="1. "
+                        android:textAlignment="textStart" />
+
+                    <TextView
+                        android:id="@+id/textViewOptionA"
+                        style="@style/TitleText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/space10dp"
+                        android:paddingBottom="@dimen/space10dp"
+                        android:paddingEnd="@dimen/space5dp"
+                        android:text="@string/question"
+                        android:textAlignment="textStart" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:id="@+id/layoutOptionB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space16dp"
+                app:cardCornerRadius="@dimen/space5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/space5dp"
+                        android:layout_marginStart="@dimen/space5dp"
+                        android:text="2. "
+                        android:textAlignment="textStart" />
+
+                    <TextView
+                        android:id="@+id/textViewOptionB"
+                        style="@style/TitleText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/space10dp"
+                        android:paddingEnd="@dimen/space5dp"
+                        android:paddingBottom="@dimen/space10dp"
+                        android:text="@string/question"
+                        android:textAlignment="textStart" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/layoutOptionC"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space16dp"
+                app:cardCornerRadius="@dimen/space5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/space5dp"
+                        android:layout_marginStart="@dimen/space5dp"
+                        android:text="3. "
+                        android:textAlignment="textStart" />
+
+                    <TextView
+                        android:id="@+id/textViewOptionC"
+                        style="@style/TitleText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/space10dp"
+                        android:paddingBottom="@dimen/space10dp"
+                        android:paddingEnd="@dimen/space5dp"
+                        android:text="@string/question"
+                        android:textAlignment="textStart" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/layoutOptionD"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space16dp"
+                app:cardCornerRadius="@dimen/space5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/space5dp"
+                        android:layout_marginStart="@dimen/space5dp"
+                        android:text="4. "
+                        android:textAlignment="textStart" />
+
+                    <TextView
+                        android:id="@+id/textViewOptionD"
+                        style="@style/TitleText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/space10dp"
+                        android:paddingBottom="@dimen/space10dp"
+                        android:paddingEnd="@dimen/space5dp"
+                        android:text="@string/question"
+                        android:textAlignment="textStart" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/layoutOptionE"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space16dp"
+                android:layout_marginBottom="30dp"
+                app:cardCornerRadius="@dimen/space5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TitleText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/space5dp"
+                        android:layout_marginStart="@dimen/space5dp"
+                        android:text="5. "
+                        android:textAlignment="textStart" />
+
+                    <TextView
+                        android:id="@+id/textViewOptionE"
+                        style="@style/TitleText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/space10dp"
+                        android:paddingBottom="@dimen/space10dp"
+                        android:paddingEnd="@dimen/space5dp"
+                        android:text="@string/question"
+                        android:textAlignment="textStart" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:background="@drawable/quiz_progress_circle_dark"
+        android:progressDrawable="@drawable/quiz_progress_circle"
+        android:id="@+id/progressBar"
+        android:layout_width="@dimen/dimen_60dp"
+        android:layout_height="@dimen/dimen_60dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="100"
+        android:rotation="-90"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textViewSeconds"
+        style="@style/TitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintTop_toTopOf="@+id/progressBar" />
+
+
+</android.support.constraint.ConstraintLayout>

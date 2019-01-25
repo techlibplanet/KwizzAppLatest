@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class = "PolicyItemBinding">
+        <variable
+            name="PolicyItemVm"
+            type="kwizzapp.com.kwizzapp.viewmodels.SettingVm.PoliciesVm"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space10dp">
+
+        <LinearLayout
+            android:layout_marginBottom="@dimen/space10dp"
+            android:layout_marginTop="@dimen/space10dp"
+            android:background="@color/colorPrimary"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            tools:ignore="MissingConstraints">
+            <ImageView
+                android:padding="@dimen/space10dp"
+                android:layout_width="@dimen/dimen_48dp"
+                android:layout_height="@dimen/dimen_48dp"
+                android:id="@+id/policies_icon"
+                android:src="@{PolicyItemVm.policiesIcon}"/>
+
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:id="@+id/policies_label"
+                android:layout_marginStart="@dimen/space10dp"
+                android:text="@{PolicyItemVm.textLabel}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space10dp"
+                style="@style/SmallTitleText"/>
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

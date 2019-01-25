@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "559955325108",
+    "firebase_url": "https://kwizzapp-78566883.firebaseio.com",
+    "project_id": "kwizzapp-78566883",
+    "storage_bucket": "kwizzapp-78566883.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559955325108:android:226c3200d9399fe5",
+        "android_client_info": {
+          "package_name": "com.kwizzapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559955325108-78vagukgk98b6g007naca9j0cq0qs4qb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kwizzapp",
+            "certificate_hash": "89130bcaa87ddb812cb67995e258963e1c204f38"
+          }
+        },
+        {
+          "client_id": "559955325108-rvte25p51jestgksfra24cncpq4st6fm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDecP3YfOmWaQU9CmOBxrEyTgjc7jwZyH0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559955325108-rvte25p51jestgksfra24cncpq4st6fm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

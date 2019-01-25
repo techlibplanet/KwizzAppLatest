@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+
+    <TextView
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:padding="8dp"
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Label Text" />
+
+    <TextView
+        android:textSize="14sp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:id="@+id/textViewMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Message Text" />
+
+    <LinearLayout
+        android:padding="@dimen/dimen_16dp"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="end">
+
+        <android.support.v7.widget.AppCompatButton
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:textStyle="bold"
+            android:id="@+id/buttonOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ok" />
+
+        <!--<Button-->
+        <!--android:textStyle="bold"-->
+        <!--android:textColor="@color/colorWhite"-->
+        <!--android:rotationY="30"-->
+        <!--android:background="@drawable/dialog_cancel_background"-->
+        <!--android:id="@+id/buttonCancel"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Cancel" />-->
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

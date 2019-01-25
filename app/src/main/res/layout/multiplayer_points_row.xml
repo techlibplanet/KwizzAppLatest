@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data class= "ResultPointsBinding">
+        <variable
+            name="ResultPointsVm"
+            type="kwizzapp.com.kwizzapp.viewmodels.ResultViewModel.MultiplayerPointsVm"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:outlineSpotShadowColor="@color/colorAccent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/playerDisplayImage"
+                    android:layout_marginTop="@dimen/dimen_2dp"
+                    android:layout_marginStart="@dimen/dimen_2dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp" />
+
+                <TextView
+                    android:textSize="@dimen/dimen_12sp"
+                    android:id="@+id/textViewPlayerName"
+                    style="@style/DescriptionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/space10dp"
+                    android:layout_weight="0.8"
+                    android:gravity="start"
+                    android:text="Player Name" />
+
+                <TextView
+                    android:textSize="@dimen/dimen_12sp"
+                    android:id="@+id/textViewScore"
+                    style="@style/DescriptionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="SC" />
+
+                <TextView
+                    android:textSize="@dimen/dimen_12sp"
+                    android:id="@+id/textViewPointsBid"
+                    style="@style/DescriptionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="PB" />
+
+                <TextView
+                    android:textSize="@dimen/dimen_12sp"
+                    android:id="@+id/textViewPointsLoose"
+                    style="@style/DescriptionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/space10dp"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="PL" />
+
+                <TextView
+                    android:textSize="@dimen/dimen_12sp"
+                    android:id="@+id/textViewPointsWin"
+                    style="@style/DescriptionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="PW" />
+
+                <TextView
+                    android:textSize="@dimen/dimen_12sp"
+                    android:id="@+id/textViewTotal"
+                    style="@style/DescriptionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/space10dp"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="Total" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</layout>

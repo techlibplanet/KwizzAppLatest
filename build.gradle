@@ -1,0 +1,55 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext {
+        android_support_lib_version = '28.0.0'
+        gradle_plugin_version = '3.2.0'
+        kotlin_version = '1.3.11'
+        anko_version = '0.10.4'
+        arch_version = '1.0.0'
+        dagger_version = '2.15'
+        retrofit_version = '2.4.0'
+        glide_version = '4.7.1'
+        google_map_version = '16.0.0'
+        google_play_game_services_version = '16.0.0'
+        google_location_and_activity_recognition_version = '16.0.0'
+        google_account_login_auth_version = "16.0.1"
+    }
+    repositories {
+        google()
+        jcenter()
+        // Crashlytics
+        maven {
+            url 'https://maven.fabric.io/public'
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.2.0'
+
+        // Crashlytics
+        classpath 'io.fabric.tools:gradle:1.27.0'
+
+        // Firebase performance monitor
+        classpath 'com.google.firebase:firebase-plugins:1.1.5'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://maven.google.com/'
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

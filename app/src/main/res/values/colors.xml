@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primary">#673AB7</color>
+    <color name="primary_dark">#512DA8</color>
+    <color name="primary_light">#D1C4E9</color>
+    <color name="accent">#FF4081</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
+    <color name="red">#d32f2f</color>
+
+    <color name="primaryColor">#4527a0</color>
+    <color name="primaryLightColor">#7953d2</color>
+    <color name="primaryDarkColor">#000070</color>
+    <color name="secondaryColor">#18ffff</color>
+    <color name="secondaryLightColor">#76ffff</color>
+    <color name="secondaryDarkColor">#00cbcc</color>
+    <color name="primaryTextColor">#ffffff</color>
+    <color name="secondaryTextColor">#000000</color>
+    <color name="lightGrey">#ededed</color>
+
+    <color name="window_background">#fbfbfb</color>
+    <color name="app_body_text_light">#8a000000</color>
+    <color name="app_body_text_dark">#de000000</color>
+    <color name="black_overlay">#66000000</color>
+
+    <color name="white">#fff</color>
+    <color name="error_red">#e2211d</color>
+    <color name="thick_brown">#f9dda2</color>
+    <color name="cyan">#00BCD4</color>
+    <color name="light_black">#2c2c2c</color>
+    <color name="brown_pink">#6F3954</color>
+    <color name="orange">#FF9800</color>
+    <color name="deep_orange">#FF5722</color>
+    <color name="light_red_shade">#fdecea</color>
+    <color name="very_light_red_shade">#fdf3f2</color>
+    <color name="very_light_green_shade">#f2fdf3</color>
+
+
+
+    <color name="colorPrimary">#2680EB</color>
+    <color name="colorPrimaryDark">#2680EB</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorGreen">#1E8417</color>
+    <color name="colorPink">#E91E63</color>
+    <color name="colorOrange">#FF9800</color>
+    <color name="colorTeal">#1DE9B6</color>
+    <color name="colorPurple">#9C27B0</color>
+    <color name="colorRed">#F44336</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorText">#393838</color>
+    <color name="colorDarkGrey">#484848</color>
+    <color name="colorGrey">#808080</color>
+    <color name="colorLightBlue">#3BB9FF</color>
+
+</resources>

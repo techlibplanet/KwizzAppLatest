@@ -1,0 +1,16 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="kwizzapp.com.kwizzapp.settings.menusettings.SettingMenuFragment"
+    android:background="@drawable/background">
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="?actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/menu_setting_recycler_view"
+        android:scrollbars="vertical">
+    </android.support.v7.widget.RecyclerView>
+
+</FrameLayout>

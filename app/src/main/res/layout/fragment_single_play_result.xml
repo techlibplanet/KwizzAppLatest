@@ -1,0 +1,18 @@
+<layout xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data class="SinglePlayResultBinding">
+        <variable
+            name="SinglePlayResultVm"
+            type="kwizzapp.com.kwizzapp.viewmodels.SinglePlayResultVm" />
+    </data>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".singleplay.SinglePlayResultFragment">
+
+        <include layout="@layout/single_player_result_layout"
+            bind:SinglePlayResultVm="@{SinglePlayResultVm}"/>
+
+    </FrameLayout>
+</layout>

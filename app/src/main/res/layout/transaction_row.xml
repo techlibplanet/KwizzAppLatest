@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data class = "TransactionRowBinding">
+        <variable
+            name="TransactionDetailVm"
+            type="com.example.mayank.kwizzapp.transactions.TransactionDetailsVm"/>
+
+    </data>
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_margin="@dimen/dimen_5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/user_image"
+                        android:padding="@dimen/dimen_5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/ic_app_launcher"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/text_user_name"
+                                style="@style/TitleText"
+                                android:gravity="start"
+                                android:padding="@dimen/dimen_5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{TransactionDetailVm.textUserName}"/>
+
+                            <TextView
+                                android:id="@+id/text_transaction_amount"
+                                android:layout_marginEnd="@dimen/space10dp"
+                                style="@style/TitleText"
+                                android:textColor="@color/colorGreen"
+                                android:gravity="end"
+                                android:text="@{TransactionDetailVm.textAmount}"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/dimen_5dp"/>
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/text_time_stamp"
+                            style="@style/SmallTitleText"
+                            android:padding="@dimen/dimen_5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{TransactionDetailVm.textTimeStamp}"/>
+
+                        <TextView
+                            android:id="@+id/text_description"
+                            style="@style/DescriptionText"
+                            android:text="@{TransactionDetailVm.textDescription}"
+                            android:padding="@dimen/dimen_5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

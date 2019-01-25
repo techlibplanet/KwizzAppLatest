@@ -1,0 +1,42 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+    <style name="TitleText">
+        <item name="android:textColor">@color/app_body_text_dark</item>
+        <item name="android:textSize">@dimen/app_text_size_large</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="SmallTitleText">
+        <item name="android:textColor">@color/app_body_text_dark</item>
+        <item name="android:textSize">@dimen/app_text_size_xmedium</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="DescriptionText">
+        <item name="android:textColor">@color/app_body_text_light</item>
+        <item name="android:textSize">@dimen/app_text_size_medium</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="ThemeButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/round_corner_button</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Button</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">?android:attr/colorAccent</item>
+    </style>
+
+    <style name="HeaderBar">
+        <item name="android:background">?colorPrimary</item>
+        <item name="android:elevation">@dimen/header_bar_elevation</item>
+    </style>
+
+    <style name="ErrorStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/error_red</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+</resources>
