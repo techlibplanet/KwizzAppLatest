@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -17,81 +19,98 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorWhite">
+        android:background="@drawable/background"
+        tools:context=".WithdrawalPoints">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
+        <android.support.v7.widget.CardView
+            android:layout_width="324dp"
+            android:layout_height="350dp"
+            android:layout_margin="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/card_background"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <android.support.v7.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/space10dp"
-                android:padding="@dimen/space10dp">
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/inputLayoutAmount"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_margin="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp">
 
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/inputLayoutAmount"
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/editTextAmount"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/space10dp">
+                        android:hint="Enter Points"
+                        android:text="@={WithdrawalPointsVm.amount}" />
+                </android.support.design.widget.TextInputLayout>
 
-                        <android.support.design.widget.TextInputEditText
-                            android:id="@+id/editTextAmount"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Amount"
-                            android:text="@={WithdrawalPointsVm.amount}" />
-                    </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/inputLayoutAccountNumber"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:visibility="@{DisableBankDetails ? View.GONE : View.VISIBLE}">
 
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/inputLayoutAccountNumber"
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/editTextAccountNumber"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/space10dp"
-                        android:visibility="@{DisableBankDetails ? View.GONE : View.VISIBLE}">
+                        android:hint="Enter Account Number"
+                        android:text="@={WithdrawalPointsVm.accountNumber}" />
+                </android.support.design.widget.TextInputLayout>
 
-                        <android.support.design.widget.TextInputEditText
-                            android:id="@+id/editTextAccountNumber"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Account Number"
-                            android:text="@={WithdrawalPointsVm.accountNumber}" />
-                    </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/inputLayoutIfscCode"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:visibility="@{DisableBankDetails ? View.GONE : View.VISIBLE}">
 
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/inputLayoutIfscCode"
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/editTextIfscCode"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/space10dp"
-                        android:visibility="@{DisableBankDetails ? View.GONE : View.VISIBLE}">
+                        android:hint="Enter Ifsc Code"
+                        android:text="@={WithdrawalPointsVm.ifscCode}" />
+                </android.support.design.widget.TextInputLayout>
 
-                        <android.support.design.widget.TextInputEditText
-                            android:id="@+id/editTextIfscCode"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Ifsc Code"
-                            android:text="@={WithdrawalPointsVm.ifscCode}" />
-                    </android.support.design.widget.TextInputLayout>
+                <Button
+                    android:id="@+id/buttonWithdrawalPoints"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/button_background"
+                    android:gravity="center"
+                    android:text="Withdrawal"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+            </LinearLayout>
 
-                    <Button
-                        android:id="@+id/buttonWithdrawalPoints"
-                        style="@style/ThemeButton"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/space10dp"
-                        android:background="@drawable/round_corner_button"
-                        android:padding="8dp"
-                        android:text="Withdrawal"
-                        android:textColor="@color/white"
-                        android:textSize="20sp" />
+        </android.support.v7.widget.CardView>
 
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
     </android.support.constraint.ConstraintLayout>
 </layout>

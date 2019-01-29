@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import kwizzapp.com.kwizzapp.R
-import kwizzapp.com.kwizzapp.databinding.TransactionRowBinding
 import org.jetbrains.anko.find
 
 

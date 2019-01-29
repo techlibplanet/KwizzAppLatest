@@ -7,5 +7,5 @@ class SettingVm {
 
     class BankDetailVm(var textLabel : String, val textData : String)
 
-    class PoliciesVm(var policiesIcon : Int, var textLabel : String)
+    class PoliciesVm(val policiesIcon : Int, val textLabel : String)
 }

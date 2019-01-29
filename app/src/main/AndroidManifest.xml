@@ -30,7 +30,7 @@
             android:value="false" />
 
         <activity
-            android:name=".settings.SettingsActivity"
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,7 +44,7 @@
         <activity
             android:name=".wallet.WalletActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".MainActivity"
+        <activity android:name=".settings.SettingsActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".SampleActivity"></activity>
 

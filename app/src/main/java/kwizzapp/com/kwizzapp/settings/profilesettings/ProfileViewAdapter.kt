@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import kwizzapp.com.kwizzapp.R
 import kwizzapp.com.kwizzapp.databinding.ProfileDetailBinding
-import kwizzapp.com.kwizzapp.databinding.TransactionRowBinding
 import kwizzapp.com.kwizzapp.viewmodels.SettingVm
 
 class ProfileViewAdapter: RecyclerView.Adapter<ProfileViewHolder>() {

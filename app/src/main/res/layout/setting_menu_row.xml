@@ -32,11 +32,11 @@
                     android:layout_marginBottom="@dimen/space8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
-                    android:src="@drawable/ic_profile"/>
+                    android:src="@{SettingMenuVm.imageSource}"/>
 
                 <TextView
                     android:textColor="@color/colorWhite"
-                    android:text="Settings"
+                    android:text="@{SettingMenuVm.title}"
                     style="@style/TitleText"
                     android:textSize="@dimen/space20dp"
                     android:layout_marginLeft="16dp"

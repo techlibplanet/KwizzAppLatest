@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import kwizzapp.com.kwizzapp.R
-import kwizzapp.com.kwizzapp.databinding.TransactionRowBinding
 
 class TransactionAdapter: RecyclerView.Adapter<TransactionDetailViewHolder>() {
 

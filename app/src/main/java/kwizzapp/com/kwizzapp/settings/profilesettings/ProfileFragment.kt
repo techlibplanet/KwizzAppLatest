@@ -13,6 +13,7 @@ import android.widget.TextView
 import com.example.mayank.kwizzapp.profile.ProfileViewAdapter
 import kotlinx.android.synthetic.main.fragment_profile.*
 import kwizzapp.com.kwizzapp.R
+import kwizzapp.com.kwizzapp.settings.bankdetails.EditBankDetailsFragment
 import kwizzapp.com.kwizzapp.viewmodels.SettingVm
 import net.rmitsolutions.mfexpert.lms.helpers.*
 import org.jetbrains.anko.find
@@ -55,11 +56,11 @@ class ProfileFragment : Fragment() {
         editBankDetails = view.find(R.id.editBankDetails)
 
         editBankDetails.setOnClickListener{
-            toast("Edit bank details button clicked.")
+            val editBankDetails = EditBankDetailsFragment()
+            switchToFragmentBackStack(editBankDetails)
         }
 
         editProfile.setOnClickListener{
-            toast("Edit profile button clicked")
             val editProfileFrag = EditProfileFragment()
             switchToFragmentBackStack(editProfileFrag)
         }

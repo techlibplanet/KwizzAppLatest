@@ -8,6 +8,7 @@ import android.support.v7.widget.CardView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.example.mayank.kwizzapp.dependency.components.DaggerInjectFragmentComponent
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.wallet_menu_layout.*
@@ -30,6 +31,7 @@ class WalletMenuFragment : Fragment(), View.OnClickListener {
     private lateinit var compositeDisposable: CompositeDisposable
     private var listener: OnFragmentInteractionListener? = null
     private val CLICKABLES = intArrayOf(R.id.addPointsLayout, R.id.withdrawalLayout, R.id.transferLayout, R.id.transactionLayout)
+    private lateinit var walletPoints : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,12 +46,13 @@ class WalletMenuFragment : Fragment(), View.OnClickListener {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_wallet_menu, container, false)
+        walletPoints = view.find(R.id.walletPoints)
         // Getting balance from server
         when {
             activity?.isNetConnected()!! -> checkBalance()
             else -> {
                 toast("No Internet")
-                walletPoints.text = "Error - No Internet !"
+                walletPoints.setText("No Internet!")
             }
         }
         for (id in CLICKABLES) view.find<CardView>(id).setOnClickListener(this)

@@ -4,22 +4,20 @@ import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import kwizzapp.com.kwizzapp.R
 import kwizzapp.com.kwizzapp.databinding.PolicyItemBinding
+import kwizzapp.com.kwizzapp.settings.policies.PolicyViewHolder
 import kwizzapp.com.kwizzapp.viewmodels.SettingVm
 
-class PoliciesAdapter: RecyclerView.Adapter<PoliciesViewHolder>() {
+class PoliciesAdapter: RecyclerView.Adapter<PolicyViewHolder>() {
 
-    var items: List<SettingVm.PoliciesVm> = emptyList()
+    var items: List<SettingVm.SettingMenuVm> = emptyList()
     private lateinit var context: Context
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PoliciesViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PolicyViewHolder {
         context = parent.context
-//        val v = LayoutInflater.from(context).inflate(R.layout.policies_row, parent, false)
-//        return PoliciesViewHolder(v)
         val inflater = LayoutInflater.from(context)
         val dataBinding = PolicyItemBinding.inflate(inflater, parent, false)
-        return PoliciesViewHolder(dataBinding)
+        return PolicyViewHolder(dataBinding)
 
     }
 
@@ -27,7 +25,7 @@ class PoliciesAdapter: RecyclerView.Adapter<PoliciesViewHolder>() {
         return items.size
     }
 
-    override fun onBindViewHolder(holder: PoliciesViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: PolicyViewHolder, position: Int) {
         val policies = items[position]
         holder.bindView(context,policies, position)
     }

@@ -4,7 +4,7 @@ import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import kwizzapp.com.kwizzapp.R
+import kwizzapp.com.kwizzapp.databinding.SettingMenuBinding
 import kwizzapp.com.kwizzapp.viewmodels.SettingVm
 
 class SettingMenuAdapter: RecyclerView.Adapter<SettingMenuViewHolder>() {
@@ -14,8 +14,11 @@ class SettingMenuAdapter: RecyclerView.Adapter<SettingMenuViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SettingMenuViewHolder {
         context = parent.context
-        val v = LayoutInflater.from(context).inflate(R.layout.setting_menu_row, parent, false)
-        return SettingMenuViewHolder(v)
+
+        val inflater = LayoutInflater.from(context)
+        val dataBinding = SettingMenuBinding.inflate(inflater, parent, false)
+        return SettingMenuViewHolder(dataBinding)
+
     }
 
     override fun getItemCount(): Int {

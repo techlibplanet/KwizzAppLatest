@@ -19,7 +19,7 @@ class PoliciesFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     val adapter: PoliciesAdapter by lazy { PoliciesAdapter() }
-    lateinit var modelList: MutableList<SettingVm.PoliciesVm>
+    lateinit var modelList: MutableList<SettingVm.SettingMenuVm>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,25 +29,25 @@ class PoliciesFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view =inflater.inflate(R.layout.fragment_policies, container, false)
         recyclerView = view.findViewById(R.id.policies_recycler_view)
-        recyclerView.layoutManager = LinearLayoutManager(activity)
+        recyclerView.layoutManager = LinearLayoutManager(activity) as RecyclerView.LayoutManager?
         recyclerView.setHasFixedSize(true)
         recyclerView.addItemDecoration(DividerItemDecoration(activity, 0))
         recyclerView.adapter = adapter
-        modelList = mutableListOf<SettingVm.PoliciesVm>()
+        modelList = mutableListOf<SettingVm.SettingMenuVm>()
         setPoliciesItem()
         return view
     }
 
     private fun setPoliciesItem() {
         modelList.clear()
-        modelList.add(SettingVm.PoliciesVm(R.drawable.ic_info, "About KwizzApp"))
-        modelList.add(SettingVm.PoliciesVm(R.drawable.ic_assignment, "Privacy Policy"))
-        modelList.add(SettingVm.PoliciesVm(R.drawable.ic_error, "Terms & Conditions"))
-        modelList.add(SettingVm.PoliciesVm(R.drawable.ic_perm_device_information, "Open Source Licenses"))
+        modelList.add(SettingVm.SettingMenuVm(R.drawable.ic_info, "About KwizzApp"))
+        modelList.add(SettingVm.SettingMenuVm(R.drawable.ic_assignment, "Privacy Policy"))
+        modelList.add(SettingVm.SettingMenuVm(R.drawable.ic_error, "Terms & Conditions"))
+        modelList.add(SettingVm.SettingMenuVm(R.drawable.ic_perm_device_information, "Open Source Licenses"))
         setRecyclerViewAdapter(modelList)
     }
 
-    private fun setRecyclerViewAdapter(list: List<SettingVm.PoliciesVm>) {
+    private fun setRecyclerViewAdapter(list: List<SettingVm.SettingMenuVm>) {
         adapter.items = list
         adapter.notifyDataSetChanged()
     }

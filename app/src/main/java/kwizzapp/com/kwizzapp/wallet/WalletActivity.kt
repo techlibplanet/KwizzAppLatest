@@ -10,6 +10,7 @@ import com.example.mayank.kwizzapp.wallet.AddPointsFragment
 import com.example.mayank.kwizzapp.wallet.TransferPointsFragment
 import com.example.mayank.kwizzapp.wallet.WalletMenuFragment
 import com.example.mayank.kwizzapp.wallet.WithdrawalPointsFragment
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.perf.FirebasePerformance
 import com.google.firebase.perf.metrics.Trace
 import com.payumoney.core.entity.TransactionResponse
@@ -50,6 +51,8 @@ class WalletActivity : AppCompatActivity(), WalletMenuFragment.OnFragmentInterac
         depComponent.injectWalletActivity(this)
 
         compositeDisposable = CompositeDisposable()
+
+        Constants.firebaseAnalytics = FirebaseAnalytics.getInstance(this)
 
         myTrace = FirebasePerformance.getInstance().newTrace("add_points_trace")
 

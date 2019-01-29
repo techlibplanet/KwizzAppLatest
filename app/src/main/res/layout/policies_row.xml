@@ -5,7 +5,7 @@
     <data class = "PolicyItemBinding">
         <variable
             name="PolicyItemVm"
-            type="kwizzapp.com.kwizzapp.viewmodels.SettingVm.PoliciesVm"/>
+            type="kwizzapp.com.kwizzapp.viewmodels.SettingVm.SettingMenuVm"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -14,6 +14,7 @@
         android:layout_marginBottom="@dimen/space10dp">
 
         <LinearLayout
+            android:id="@+id/policy_layout"
             android:layout_marginBottom="@dimen/space10dp"
             android:layout_marginTop="@dimen/space10dp"
             android:background="@color/colorPrimary"
@@ -30,13 +31,13 @@
                 android:layout_width="@dimen/dimen_48dp"
                 android:layout_height="@dimen/dimen_48dp"
                 android:id="@+id/policies_icon"
-                android:src="@{PolicyItemVm.policiesIcon}"/>
+                android:src="@{PolicyItemVm.imageSource}"/>
 
             <TextView
                 android:textColor="@color/colorWhite"
                 android:id="@+id/policies_label"
                 android:layout_marginStart="@dimen/space10dp"
-                android:text="@{PolicyItemVm.textLabel}"
+                android:text="@{PolicyItemVm.title}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/space10dp"
