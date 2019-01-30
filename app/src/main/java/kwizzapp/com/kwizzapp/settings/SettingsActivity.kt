@@ -7,7 +7,6 @@ import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import kwizzapp.com.kwizzapp.R
-import kwizzapp.com.kwizzapp.settings.bankdetails.BankDetailFragment
 import kwizzapp.com.kwizzapp.settings.bankdetails.EditBankDetailsFragment
 import kwizzapp.com.kwizzapp.settings.menusettings.SettingMenuFragment
 import kwizzapp.com.kwizzapp.settings.policies.PoliciesFragment
@@ -21,13 +20,12 @@ import net.rmitsolutions.mfexpert.lms.helpers.switchToFragment
 import org.jetbrains.anko.find
 import android.content.Intent
 import kwizzapp.com.kwizzapp.Constants
-import net.rmitsolutions.mfexpert.lms.helpers.logD
 import org.jetbrains.anko.startActivity
 
 
 class SettingsActivity : AppCompatActivity(),
         SettingMenuFragment.OnFragmentInteractionListener, ProfileFragment.OnFragmentInteractionListener,
-        BankDetailFragment.OnFragmentInteractionListener, PoliciesFragment.OnFragmentInteractionListener,
+        PoliciesFragment.OnFragmentInteractionListener,
         EditProfileFragment.OnFragmentInteractionListener, EditBankDetailsFragment.OnFragmentInteractionListener,
         PrivacyPoliciesFragment.OnFragmentInteractionListener, AboutAppFragment.OnFragmentInteractionListener,
         TermsNConditionFragment.OnFragmentInteractionListener, OpenSourceLicenseFragment.OnFragmentInteractionListener {
@@ -55,7 +53,7 @@ class SettingsActivity : AppCompatActivity(),
         params.putInt("ShareApp", item?.itemId!!)
         var eventName = "EventName : Null"
         when (item.itemId) {
-            R.id.mShare -> {
+            R.id.menu_share -> {
                 eventName = "ShareApp"
                 val i = Intent(android.content.Intent.ACTION_SEND)
                 i.type = "text/plain"

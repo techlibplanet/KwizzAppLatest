@@ -18,6 +18,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import com.example.mayank.kwizzapp.dependency.components.DaggerInjectFragmentComponent
 import com.example.mayank.kwizzapp.dialog.ProgressDialog
@@ -90,6 +91,7 @@ class MultiplayerResultFragment : Fragment(), View.OnClickListener {
     private lateinit var greetOne : TextView
     private lateinit var greetTwo : TextView
     private lateinit var greetThree : TextView
+    private lateinit var resultIcon : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -130,6 +132,7 @@ class MultiplayerResultFragment : Fragment(), View.OnClickListener {
         resultLayout.visibility = View.GONE
 //        buttonBack.setOnClickListener(this)
         resultRecyclerView.adapter = adapter
+        resultIcon = view.find(R.id.result_icon)
         greetOne = view.find(R.id.greetOne)
         greetTwo = view.find(R.id.greetTwo)
         greetThree = view.find(R.id.greetThree)
@@ -230,7 +233,7 @@ class MultiplayerResultFragment : Fragment(), View.OnClickListener {
             if (resultList[0].rightAnswers == resultList[1].rightAnswers) {
                 if (!show) {
                     win = false
-                    showDialogResult(activity!!, "Sorry", "It's a Tie", "Your bid points will credited to your wallet", R.mipmap.ic_loose)
+                    //showDialogResult(activity!!, "Sorry", "It's a Tie", "Your bid points will credited to your wallet", R.mipmap.ic_loose)
                     updateResult.displayName = displayName
                     updateResult.amount = amount
                     updateResult.timeStamp = Global.getFormatDate(Calendar.getInstance().time)
@@ -243,7 +246,7 @@ class MultiplayerResultFragment : Fragment(), View.OnClickListener {
             } else {
                 if (!show) {
                     win = true
-                    showDialogResult(activity!!, "Congrats", "You Win !", "Your winning points will credited to your wallet", R.mipmap.ic_done)
+                    //showDialogResult(activity!!, "Congrats", "You Win !", "Your winning points will credited to your wallet", R.mipmap.ic_done)
                     val totalAmount = (amount?.times(LibGameConstants.GameConstants.mFinishedParticipants.size))?.times(80)?.div(100)
                     updateResult.displayName = displayName
                     updateResult.amount = totalAmount
@@ -258,12 +261,12 @@ class MultiplayerResultFragment : Fragment(), View.OnClickListener {
         } else {
             if (!show) {
                 win = false
-                showDialogResult(activity!!, "Sorry", "You Loose !", "Better luck next time", R.mipmap.ic_loose)
+                //showDialogResult(activity!!, "Sorry", "You Loose !", "Better luck next time", R.mipmap.ic_loose)
                 show = true
                 resultLayout.visibility = View.VISIBLE
                 greetThree.textSize = 14F
                 greetThree.typeface = Typeface.DEFAULT
-                setGreetingText("Sorry", "You Loose", "Better luck next time")
+                setGreetingText("Sorry", "You Loose", "Better luck next time", R.mipmap.ic_result_loose)
                 achievements.checkAchievements(0, LibGameConstants.GameConstants.resultList?.size!!, win, rightAnswers!!)
                 myTrace.incrementMetric("loose_game", 1)
             }
@@ -301,11 +304,11 @@ class MultiplayerResultFragment : Fragment(), View.OnClickListener {
                                 submitScoreToLeaderboards(response.balance.toLong())
                                 achievements.checkAchievements(response.balance.toInt(), resultList?.size!!, win, rightAnswers!!)
                                 if (updateResult.amount.toString().toDouble() > amount!!){
-                                    setGreetingText("Congratulations", "You've won", "${updateResult.amount}")
+                                    setGreetingText("Congratulations", "You've won", "${updateResult.amount}", R.mipmap.ic_result_win)
                                 }else{
                                     greetThree.textSize = 14F
                                     greetThree.typeface = Typeface.DEFAULT
-                                    setGreetingText("Sorry", "It's a tie", "Try one more time")
+                                    setGreetingText("Sorry", "It's a tie", "Try one more time", R.mipmap.ic_result_loose)
                                 }
                             } else {
                                 showDialog(activity!!, "Error", response.message)
@@ -319,10 +322,11 @@ class MultiplayerResultFragment : Fragment(), View.OnClickListener {
                 ))
     }
 
-    private fun setGreetingText(greet1 : String, greet2 : String, greet3 : String){
+    private fun setGreetingText(greet1 : String, greet2 : String, greet3 : String, resource :Int){
         greetOne.text = greet1
         greetTwo.text = greet2
         greetThree.text = greet3
+        resultIcon.setImageResource(resource)
     }
 
     private fun updateGameStatus() {

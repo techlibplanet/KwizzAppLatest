@@ -24,14 +24,13 @@ class SettingMenuFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-        }
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view =inflater.inflate(R.layout.fragment_setting_menu, container, false)
         recyclerView = view.findViewById(R.id.menu_setting_recycler_view)
-        recyclerView.layoutManager = LinearLayoutManager(activity)
+        recyclerView.layoutManager = LinearLayoutManager(activity) as RecyclerView.LayoutManager?
         recyclerView.setHasFixedSize(true)
         recyclerView.addItemDecoration(DividerItemDecoration(activity, LinearLayoutManager.VERTICAL))
         recyclerView.adapter = adapter
@@ -75,6 +74,4 @@ class SettingMenuFragment : Fragment() {
         fun onFragmentInteraction(uri: Uri)
     }
 
-    companion object {
-    }
 }

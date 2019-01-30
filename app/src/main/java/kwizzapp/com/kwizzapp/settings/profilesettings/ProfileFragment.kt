@@ -4,17 +4,11 @@ import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
-import com.example.mayank.kwizzapp.profile.ProfileViewAdapter
-import kotlinx.android.synthetic.main.fragment_profile.*
 import kwizzapp.com.kwizzapp.R
 import kwizzapp.com.kwizzapp.settings.bankdetails.EditBankDetailsFragment
-import kwizzapp.com.kwizzapp.viewmodels.SettingVm
 import net.rmitsolutions.mfexpert.lms.helpers.*
 import org.jetbrains.anko.find
 
@@ -33,9 +27,6 @@ class ProfileFragment : Fragment() {
     private lateinit var editBankDetails : ImageView
 
 
-    private lateinit var recyclerView: RecyclerView
-    val adapter: ProfileViewAdapter by lazy { ProfileViewAdapter() }
-    lateinit var modelList: MutableList<SettingVm.ProfileVm>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,32 +69,9 @@ class ProfileFragment : Fragment() {
         accountNumber.text = activity?.getPref(SharedPrefKeys.ACCOUNT_NUMBER, "")
         ifsc.text = activity?.getPref(SharedPrefKeys.IFSC_CODE, "")
 
-//        recyclerView = view.findViewById(R.id.profile_recycler_view)
-//        recyclerView.layoutManager = LinearLayoutManager(activity)
-//        recyclerView.setHasFixedSize(true)
-//        recyclerView.addItemDecoration(DividerItemDecoration(activity, LinearLayoutManager.VERTICAL))
-//        recyclerView.adapter = adapter
-//        modelList = mutableListOf<SettingVm.ProfileVm>()
-//        setProfileItem()
         return view
     }
 
-    private fun setProfileItem() {
-        modelList.clear()
-        val firstName = activity?.getPref(SharedPrefKeys.FIRST_NAME, "")!!
-        logD("First Name - $firstName")
-        modelList.add(SettingVm.ProfileVm("First Name", firstName))
-        modelList.add(SettingVm.ProfileVm("Last Name", activity?.getPref(SharedPrefKeys.LAST_NAME, "")!!))
-        modelList.add(SettingVm.ProfileVm("Mobile Number", activity?.getPref(SharedPrefKeys.MOBILE_NUMBER, "")!!))
-        modelList.add(SettingVm.ProfileVm("Email", activity?.getPref(SharedPrefKeys.EMAIL, "")!!))
-        setRecyclerViewAdapter(modelList)
-
-    }
-
-    private fun setRecyclerViewAdapter(list: List<SettingVm.ProfileVm>) {
-        adapter.items = list
-        adapter.notifyDataSetChanged()
-    }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         activity?.menuInflater?.inflate(R.menu.menu_profile, menu)
@@ -143,7 +111,4 @@ class ProfileFragment : Fragment() {
         fun onFragmentInteraction(uri: Uri)
     }
 
-    companion object {
-
-    }
 }

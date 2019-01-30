@@ -146,7 +146,6 @@ class EditProfileFragment : Fragment(), View.OnClickListener {
             }
             else -> textInputLayoutEmail.error = null
         }
-
         return true
     }
 
@@ -176,7 +175,4 @@ class EditProfileFragment : Fragment(), View.OnClickListener {
         fun onFragmentInteraction(uri: Uri)
     }
 
-    companion object {
-
-    }
 }
