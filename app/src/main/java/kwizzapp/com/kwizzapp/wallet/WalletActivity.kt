@@ -52,8 +52,6 @@ class WalletActivity : AppCompatActivity(), WalletMenuFragment.OnFragmentInterac
 
         compositeDisposable = CompositeDisposable()
 
-        Constants.firebaseAnalytics = FirebaseAnalytics.getInstance(this)
-
         myTrace = FirebasePerformance.getInstance().newTrace("add_points_trace")
 
         val walletMenuFragment = WalletMenuFragment()

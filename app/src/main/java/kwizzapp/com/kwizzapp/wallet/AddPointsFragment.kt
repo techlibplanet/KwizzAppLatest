@@ -3,6 +3,7 @@ package com.example.mayank.kwizzapp.wallet
 import android.content.Context
 import android.databinding.DataBindingUtil
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -43,7 +44,13 @@ class AddPointsFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.buttonPay -> {
-                if (validate()) addPoints()
+                if (validate()) {
+                    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P){
+                        addPoints()
+                    }else{
+                        toast("Cannot add points on Android Pie. Coming soon...")
+                    }
+                }
             }
         }
     }
