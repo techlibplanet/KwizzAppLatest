@@ -51,9 +51,6 @@ class MainActivity : AppCompatActivity(),
         QuizFragment.OnFragmentInteractionListener, MultiplayerResultFragment.OnFragmentInteractionListener,
         SinglePlayQuizFragment.OnFragmentInteractionListener, SinglePlayResultFragment.OnFragmentInteractionListener {
 
-//    companion object {
-//        lateinit var firebaseAnalytics : FirebaseAnalytics
-//    }
 
     @Inject
     lateinit var userService: IUser
@@ -85,8 +82,6 @@ class MainActivity : AppCompatActivity(),
             if (task.isSuccessful) {
                 val token = task.result?.token
                 val fcmToken = getPref(SharedPrefKeys.FCM_TOKEN_ID, "")
-                logD("Token - $token")
-                logD("Saved Token - $token")
                 if (fcmToken != token) {
                     val mobileNumber = getPref(SharedPrefKeys.MOBILE_NUMBER, "")
                     if (mobileNumber != "") {
@@ -123,8 +118,6 @@ class MainActivity : AppCompatActivity(),
 
         compositeDisposable = CompositeDisposable()
 
-//        val userInfoFragment = GameMenuFragment()
-//        switchToFragment(userInfoFragment)
 
         if (isSignedIn()) {
             val mobileNumber = getPref(SharedPrefKeys.MOBILE_NUMBER, "")
