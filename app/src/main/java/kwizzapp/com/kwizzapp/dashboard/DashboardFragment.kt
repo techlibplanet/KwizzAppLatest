@@ -13,6 +13,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.games.Games
 import kwizzapp.com.kwizzapp.Constants
+import kwizzapp.com.kwizzapp.Constants.firebaseAnalytics
 
 import kwizzapp.com.kwizzapp.R
 import kwizzapp.com.kwizzapp.login.LoginFragment
@@ -72,7 +73,7 @@ class DashboardFragment : Fragment(), View.OnClickListener {
                 startActivity<SettingsActivity>()
             }
         }
-        Constants.firebaseAnalytics.logEvent(eventName!!, params)
+        firebaseAnalytics.logEvent(eventName!!, params)
     }
 
     private fun openGameMenuFragment() {

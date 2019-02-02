@@ -18,6 +18,7 @@ import kwizzapp.com.kwizzapp.KwizzApp
 
 import kwizzapp.com.kwizzapp.R
 import kwizzapp.com.kwizzapp.databinding.EditProfileBinding
+import kwizzapp.com.kwizzapp.helper.Global
 import kwizzapp.com.kwizzapp.helper.processRequest
 import kwizzapp.com.kwizzapp.models.Users
 
@@ -146,6 +147,11 @@ class EditProfileFragment : Fragment(), View.OnClickListener {
             }
             else -> textInputLayoutEmail.error = null
         }
+
+        if (!Global.checkInternet(activity!!)){
+            return false
+        }
+
         return true
     }
 

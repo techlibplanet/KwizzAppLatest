@@ -70,7 +70,7 @@ class TransactionFragment : Fragment() {
     private fun setTransactionsItems() {
         modelList.clear()
         val mobileNumber = activity?.getPref(SharedPrefKeys.MOBILE_NUMBER, "")
-        if (activity?.isNetConnected()!!) {
+        if (validate()) {
             if (mobileNumber != "") {
                 compositeDisposable.add(transactionService.fetchTransactions(mobileNumber!!)
                         .processRequest(
@@ -104,11 +104,19 @@ class TransactionFragment : Fragment() {
                                 }
                         ))
             } else {
+                hideProgress()
                 toast("Enter mobile number in settings")
             }
         } else {
-            toast("Check your internet connection !")
+            hideProgress()
         }
+    }
+
+    private fun validate(): Boolean {
+        if (!Global.checkInternet(activity!!)) {
+            return false
+        }
+        return true
     }
 
     private fun setRecyclerViewAdapter(list: List<TransactionDetailsVm>) {

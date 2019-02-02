@@ -19,7 +19,7 @@ android {
         applicationId "com.kwizzapp"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 6
+        versionCode 8
         versionName "1.1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -123,6 +123,9 @@ dependencies {
 
     // Circular Profile Image
     implementation 'de.hdodenhof:circleimageview:3.0.0'
+
+    // Razorpay Payment Gateway
+    implementation 'com.razorpay:checkout:1.5.2'
 
 
 }

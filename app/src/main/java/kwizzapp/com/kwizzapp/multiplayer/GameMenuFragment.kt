@@ -12,8 +12,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.mayank.kwizzapp.dependency.components.DaggerInjectFragmentComponent
 import com.example.mayank.kwizzapp.libgame.LibPlayGame
+import com.google.firebase.analytics.FirebaseAnalytics
 import io.reactivex.disposables.CompositeDisposable
 import kwizzapp.com.kwizzapp.Constants
+import kwizzapp.com.kwizzapp.Constants.firebaseAnalytics
 import kwizzapp.com.kwizzapp.KwizzApp
 
 import kwizzapp.com.kwizzapp.R
@@ -66,7 +68,7 @@ class GameMenuFragment : Fragment(), View.OnClickListener {
 
         when (v.id) {
             R.id.singlePlayerLayout -> {
-                if (checkInternet(activity!!)) {
+                if (validate()) {
                     gameModeName = "SinglePlayer"
                     val singlePlayDetails = SinglePlayMenuFragment()
                     switchToFragmentBackStack(singlePlayDetails)
@@ -74,7 +76,7 @@ class GameMenuFragment : Fragment(), View.OnClickListener {
                 }
             }
             R.id.quickGameLayout -> {
-                if (checkInternet(activity!!)) {
+                if (validate()) {
                     gameModeName = "QuickGame"
                     showProgress()
                     check = 0
@@ -82,7 +84,7 @@ class GameMenuFragment : Fragment(), View.OnClickListener {
                 }
             }
             R.id.multiplayerLayout -> {
-                if (checkInternet(activity!!)) {
+                if (validate()) {
                     gameModeName = "MultiPlayer"
                     showProgress()
                     check = 1
@@ -90,14 +92,24 @@ class GameMenuFragment : Fragment(), View.OnClickListener {
                 }
             }
             R.id.invitationLayout -> {
-                if (checkInternet(activity!!)) {
+                if (validate()) {
                     gameModeName = "Invitations"
                     showProgress()
                     libPlayGame.showInvitationInbox()
                 }
             }
         }
-        Constants.firebaseAnalytics.logEvent(gameModeName!!, params)
+        if (firebaseAnalytics==null){
+            firebaseAnalytics = FirebaseAnalytics.getInstance(activity!!)
+        }
+        firebaseAnalytics.logEvent(gameModeName!!, params)
+    }
+
+    private fun validate(): Boolean {
+        if (!Global.checkInternet(activity!!)){
+            return false
+        }
+        return true
     }
 
 

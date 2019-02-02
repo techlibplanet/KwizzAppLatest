@@ -42,6 +42,7 @@ import kwizzapp.com.kwizzapp.Constants.WRONG_ANSWERS
 import kwizzapp.com.kwizzapp.KwizzApp
 import com.google.firebase.perf.FirebasePerformance
 import com.google.firebase.perf.metrics.Trace
+import kwizzapp.com.kwizzapp.Constants.firebaseAnalytics
 
 
 import kwizzapp.com.kwizzapp.R
@@ -279,7 +280,7 @@ class MultiplayerResultFragment : Fragment(), View.OnClickListener {
         val bundle = Bundle()
         bundle.putLong(FirebaseAnalytics.Param.SCORE, score);
         bundle.putString("leaderboard_id", getString(R.string.leaderboard_toppers));
-        Constants.firebaseAnalytics.logEvent(FirebaseAnalytics.Event.POST_SCORE, bundle);
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.POST_SCORE, bundle);
     }
 
     private fun showDialogResult(activity: Activity, bigTitle: String, smallTitle: String, message: String, imageResource: Int) {
@@ -300,7 +301,7 @@ class MultiplayerResultFragment : Fragment(), View.OnClickListener {
                                 bundle.putDouble("Amount", updateResult.amount!!)
                                 bundle.putString("DisplayName", updateResult.displayName)
                                 bundle.putString("Name", "${updateResult.timeStamp} ${updateResult.productInfo}")
-                                Constants.firebaseAnalytics.logEvent("MultiplayerResult", bundle)
+                                firebaseAnalytics.logEvent("MultiplayerResult", bundle)
                                 submitScoreToLeaderboards(response.balance.toLong())
                                 achievements.checkAchievements(response.balance.toInt(), resultList?.size!!, win, rightAnswers!!)
                                 if (updateResult.amount.toString().toDouble() > amount!!){

@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment
 import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.google.android.gms.common.images.ImageManager
 import kwizzapp.com.kwizzapp.R
 import kwizzapp.com.kwizzapp.settings.bankdetails.EditBankDetailsFragment
 import net.rmitsolutions.mfexpert.lms.helpers.*
@@ -25,7 +28,6 @@ class ProfileFragment : Fragment() {
     private lateinit var ifsc : TextView
     private lateinit var editProfile : ImageView
     private lateinit var editBankDetails : ImageView
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,9 +60,13 @@ class ProfileFragment : Fragment() {
 
         val imageUri = Uri.parse(activity?.getPref(SharedPrefKeys.ICON_IMAGE_URI, ""))
         if(imageUri.toString()!=""){
-            playerImage.setImageURI(imageUri)
+            val mgr = ImageManager.create(context)
+            mgr.loadImage(playerImage, imageUri)
         }else{
-            playerImage.setImageResource(R.drawable.achievements_4)
+            Glide.with(this)
+                    .load(R.mipmap.ic_profile)
+                    .apply(RequestOptions.circleCropTransform())
+                    .into(playerImage);
         }
 
         playerName.text = "${activity?.getPref(SharedPrefKeys.FIRST_NAME, "") } ${activity?.getPref(SharedPrefKeys.LAST_NAME, "") }"
@@ -71,23 +77,6 @@ class ProfileFragment : Fragment() {
 
         return view
     }
-
-
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        activity?.menuInflater?.inflate(R.menu.menu_profile, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        return when (item?.itemId) {
-            R.id.edit -> {
-                val editProfileFragment = EditProfileFragment()
-                switchToFragmentBackStack(editProfileFragment)
-                return true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
 
 
     fun onButtonPressed(uri: Uri) {

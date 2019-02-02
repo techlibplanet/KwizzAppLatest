@@ -13,6 +13,7 @@ import com.example.mayank.kwizzapp.dependency.components.DaggerInjectFragmentCom
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.wallet_menu_layout.*
 import kwizzapp.com.kwizzapp.Constants
+import kwizzapp.com.kwizzapp.Constants.firebaseAnalytics
 import kwizzapp.com.kwizzapp.KwizzApp
 import kwizzapp.com.kwizzapp.R
 import kwizzapp.com.kwizzapp.helper.Global
@@ -88,7 +89,7 @@ class WalletMenuFragment : Fragment(), View.OnClickListener {
                 switchToFragmentBackStack(transactionFragment)
             }
         }
-        Constants.firebaseAnalytics.logEvent(eventName!!, params)
+        firebaseAnalytics.logEvent(eventName!!, params)
     }
 
     private fun checkBalance() {

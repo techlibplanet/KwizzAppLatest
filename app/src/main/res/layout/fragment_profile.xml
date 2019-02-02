@@ -50,13 +50,22 @@
                             android:orientation="vertical"
                             android:paddingTop="@dimen/space10dp">
 
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:id="@+id/player_image"
-                                android:layout_width="96dp"
-                                android:layout_height="96dp"
-                                android:src="@drawable/achievements_4"
-                                app:civ_border_color="#FF2680EB"
-                                app:civ_border_width="2dp" />
+                            <android.support.v7.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardPreventCornerOverlap="false"
+                                app:cardCornerRadius="48dp">
+
+                                <ImageView
+                                    android:id="@+id/player_image"
+                                    android:layout_width="96dp"
+                                    android:layout_height="96dp"
+                                    android:src="@drawable/achievements_4" />
+
+                            </android.support.v7.widget.CardView>
+
+                            <!--app:civ_border_color="#FF2680EB"-->
+                            <!--app:civ_border_width="2dp"-->
 
                             <TextView
                                 android:id="@+id/playerName"

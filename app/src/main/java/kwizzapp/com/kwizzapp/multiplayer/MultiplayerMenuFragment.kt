@@ -18,6 +18,7 @@ import com.example.mayank.kwizzapp.libgame.LibPlayGame
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.game_detail_layout.*
 import kwizzapp.com.kwizzapp.Constants
+import kwizzapp.com.kwizzapp.Constants.firebaseAnalytics
 import kwizzapp.com.kwizzapp.KwizzApp
 
 import kwizzapp.com.kwizzapp.R
@@ -293,7 +294,7 @@ class MultiplayerMenuFragment : Fragment(), View.OnClickListener {
                                     bundle.putString("SubjectCode", subCode)
                                     bundle.putDouble("Amount", subtractBalance.amount!!)
                                     bundle.putString("MobileNumber", activity?.getPref(SharedPrefKeys.MOBILE_NUMBER, ""))
-                                    Constants.firebaseAnalytics.logEvent("SelectedMultiplayerOptions", bundle)
+                                    firebaseAnalytics.logEvent("SelectedMultiplayerOptions", bundle)
                                     val quizFragment = QuizFragment()
                                     quizFragment.arguments = bundle
                                     switchToFragmentBackStack(quizFragment)

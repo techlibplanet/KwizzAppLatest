@@ -7,6 +7,8 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import kwizzapp.com.kwizzapp.R
+import kwizzapp.com.kwizzapp.helper.Converters
+import kwizzapp.com.kwizzapp.helper.Global
 import org.jetbrains.anko.find
 
 
@@ -33,7 +35,7 @@ class TransactionDetailViewHolder(itemView : View) : RecyclerView.ViewHolder(ite
         val imageUser = itemView.find<ImageView>(R.id.user_image)
 
         textUserName.text = transactionDetailVm.textUserName
-        textTimeStamp.text = transactionDetailVm.textTimeStamp
+        textTimeStamp.text = Global.getDateFormat(Converters.fromTimestamp(transactionDetailVm.textTimeStamp?.toLong())!!)
         textDescription.text = transactionDetailVm.textDescription
         if (transactionDetailVm.transactionType.toString() == "Debited"){
             textAmount.text = "- ${transactionDetailVm.textAmount}"

@@ -6,6 +6,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.games.Games
 import com.google.firebase.analytics.FirebaseAnalytics
 import kwizzapp.com.kwizzapp.Constants
+import kwizzapp.com.kwizzapp.Constants.firebaseAnalytics
 import kwizzapp.com.kwizzapp.R
 import net.rmitsolutions.mfexpert.lms.helpers.SharedPrefKeys
 import net.rmitsolutions.mfexpert.lms.helpers.getPref
@@ -77,7 +78,7 @@ class Achievements(private val activity: Activity) {
     private fun addToFirebase(achievementId: Int) {
         val bundle = Bundle()
         bundle.putString(FirebaseAnalytics.Param.ACHIEVEMENT_ID, activity.getString(achievementId));
-        Constants.firebaseAnalytics.logEvent(FirebaseAnalytics.Event.UNLOCK_ACHIEVEMENT, bundle)
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.UNLOCK_ACHIEVEMENT, bundle)
     }
 
 }

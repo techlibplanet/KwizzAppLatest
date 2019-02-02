@@ -64,6 +64,11 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="MyFcmChannelId" />
+
+        <!--Razorpay Api Key-->
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_live_L80QCSQrlinxL3" />
     </application>
 
 </manifest>

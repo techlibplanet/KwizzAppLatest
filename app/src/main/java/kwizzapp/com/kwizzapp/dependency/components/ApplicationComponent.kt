@@ -8,6 +8,7 @@ import com.example.mayank.kwizzapp.dependency.qualifiers.ApplicationContextQuali
 import com.example.mayank.kwizzapp.dependency.scopes.ApplicationScope
 import dagger.Component
 import kwizzapp.com.kwizzapp.services.IQuestion
+import kwizzapp.com.kwizzapp.services.IRazorpay
 import kwizzapp.com.kwizzapp.services.ITransaction
 import kwizzapp.com.kwizzapp.services.IUser
 import okhttp3.OkHttpClient
@@ -27,4 +28,6 @@ interface ApplicationComponent {
     fun getTransactionService() : ITransaction
 
     fun getQuestionService() : IQuestion
+
+    fun getRazorPayService() : IRazorpay
 }

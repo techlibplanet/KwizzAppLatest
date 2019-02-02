@@ -23,51 +23,6 @@ object NotificationHelper {
     private var notifyId = 0
     private lateinit var notificationManager : NotificationManager
 
-//    @Synchronized
-//    fun notify(context: Context, subText: String, notificationCategory: String) {
-//        val builder = Notification.Builder(context)
-//        builder.setSmallIcon(R.mipmap.ic_launcher_round)
-//                .setContentTitle(context.getString(R.string.app_name))
-//                .setContentText(subText)
-//                .setVisibility(Notification.VISIBILITY_PUBLIC)
-//                .setCategory(notificationCategory)
-//                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
-//                .setPriority(Notification.PRIORITY_MAX)
-//
-//        val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-//        notificationManager.notify(++notifyId, builder.build())
-//    }
-//
-//    @Synchronized
-//    fun notifyGroupedError(context: Context, subText: String, summaryText: String, messages: ArrayList<String>) {
-//        val builder = Notification.Builder(context)
-//        builder.setSmallIcon(R.mipmap.ic_launcher_round)
-//                .setContentTitle(context.getString(R.string.app_name))
-//                .setContentText(subText)
-//                .setVisibility(Notification.VISIBILITY_PUBLIC)
-//                .setCategory(Notification.CATEGORY_ERROR)
-//                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
-//                .setPriority(Notification.PRIORITY_MAX)
-//
-//
-//        val inboxStyle = Notification.InboxStyle()
-//        inboxStyle.setBigContentTitle(subText)
-//                .setSummaryText(summaryText)
-//
-//        for (message in messages) {
-//            inboxStyle.addLine(message)
-//        }
-//
-//        builder.setStyle(inboxStyle)
-//                .setGroupSummary(true)
-//                .setGroup(Constants.ACCOUNT_NAME)
-//        val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-//        notificationManager.notify(++notifyId, builder.build())
-//    }
-
-
-//==============================================================================================================================
-//==============================================================================================================================
     // New Notification Api level 26 and above
     // Notice that the NotificationCompat.Builder constructor requires that you provide a channel ID.
     // This is required for compatibility with Android 8.0 (API level 26) and higher, but is ignored by older versions.

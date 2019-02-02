@@ -18,6 +18,7 @@ import com.google.firebase.iid.FirebaseInstanceId
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.fragment_user_info.*
 import kwizzapp.com.kwizzapp.Constants
+import kwizzapp.com.kwizzapp.Constants.firebaseAnalytics
 import kwizzapp.com.kwizzapp.KwizzApp
 import kwizzapp.com.kwizzapp.R
 import kwizzapp.com.kwizzapp.dashboard.DashboardFragment
@@ -84,9 +85,11 @@ class UserInfoFragment : Fragment(), View.OnClickListener {
                 userInfo.firebaseInstanceId = FirebaseInstanceId.getInstance().id
                 dataBinding.userInfoVm?.playerId = activity?.getPref(SharedPrefKeys.PLAYER_ID, "")
                 if (validate()) {
+                    showProgress()
                     compositeDisposable.add(userService.insertUserInfo(userInfo)
                             .processRequest(
                                     { response ->
+                                        hideProgress()
                                         if (response.isSuccess) {
                                             addFireBase(userInfo.mobileNumber!!)
                                             toast(response.message)
@@ -96,6 +99,7 @@ class UserInfoFragment : Fragment(), View.OnClickListener {
                                         }
                                     },
                                     { err ->
+                                        hideProgress()
                                         showDialog(activity!!, "Error", err.toString())
                                         logD("Error - ${err.toString()}")
                                         Global.updateCrashlyticsMessage(userInfo.playerId!!, "Error on posting user info to server", "Post User Info", Exception(err))
@@ -109,7 +113,7 @@ class UserInfoFragment : Fragment(), View.OnClickListener {
     private fun addFireBase(mobileNumber: String) {
         val bundle = Bundle()
         bundle.putString("mobileNumber", mobileNumber)
-        Constants.firebaseAnalytics.logEvent(FirebaseAnalytics.Event.LOGIN, bundle)
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.LOGIN, bundle)
     }
 
     private fun validate(): Boolean {

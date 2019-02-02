@@ -15,6 +15,7 @@ import com.google.firebase.perf.metrics.Trace
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.transfer_points_layout.*
 import kwizzapp.com.kwizzapp.Constants
+import kwizzapp.com.kwizzapp.Constants.firebaseAnalytics
 import kwizzapp.com.kwizzapp.KwizzApp
 import kwizzapp.com.kwizzapp.R
 import kwizzapp.com.kwizzapp.databinding.TransferPointsBinding
@@ -99,7 +100,7 @@ class TransferPointsFragment : Fragment(), View.OnClickListener {
                                         bundle.putDouble("Amount", transfer.amount!!)
                                         bundle.putString("MobileNumber", transfer.mobileNumber)
                                         bundle.putString("Name", "${transfer.firstName} ${transfer.lastName}")
-                                        Constants.firebaseAnalytics.logEvent("TransferPoints", bundle)
+                                        firebaseAnalytics.logEvent("TransferPoints", bundle)
                                         myTrace.incrementMetric("transfer_points_success", 1)
                                         myTrace.stop()
                                         startActivity<WalletActivity>()
@@ -158,6 +159,11 @@ class TransferPointsFragment : Fragment(), View.OnClickListener {
                 inputLayoutMobileNumber.error = null
             }
         }
+
+        if (!Global.checkInternet(activity!!)){
+            return false
+        }
+
         return true
     }
 

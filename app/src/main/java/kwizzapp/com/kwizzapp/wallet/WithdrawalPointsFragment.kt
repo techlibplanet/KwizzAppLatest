@@ -15,6 +15,7 @@ import com.google.firebase.perf.metrics.Trace
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.withdrawal_points_layout.*
 import kwizzapp.com.kwizzapp.Constants
+import kwizzapp.com.kwizzapp.Constants.firebaseAnalytics
 import kwizzapp.com.kwizzapp.KwizzApp
 import kwizzapp.com.kwizzapp.R
 import kwizzapp.com.kwizzapp.databinding.WithdrawalPointsBinding
@@ -128,7 +129,7 @@ class WithdrawalPointsFragment : Fragment(), View.OnClickListener {
                                         bundle.putDouble("Amount", withdrawal.amount!!)
                                         bundle.putString("MobileNumber", withdrawal.mobileNumber)
                                         bundle.putString("Name", "${withdrawal.firstName} ${withdrawal.lastName}")
-                                        Constants.firebaseAnalytics.logEvent("WithdrawalPoints", bundle)
+                                        firebaseAnalytics.logEvent("WithdrawalPoints", bundle)
                                         myTrace.incrementMetric("withdrawal_points_success", 1)
                                         myTrace.stop()
                                         startActivity<WalletActivity>()
@@ -181,6 +182,11 @@ class WithdrawalPointsFragment : Fragment(), View.OnClickListener {
                 }
             }
         }
+
+        if (!Global.checkInternet(activity!!)) {
+            return false
+        }
+
         return true
     }
 

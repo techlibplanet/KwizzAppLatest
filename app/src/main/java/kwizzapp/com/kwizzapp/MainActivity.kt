@@ -17,7 +17,6 @@ import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.iid.FirebaseInstanceId
 import io.fabric.sdk.android.Fabric
 import io.reactivex.disposables.CompositeDisposable
-import kwizzapp.com.kwizzapp.Constants.firebaseAnalytics
 import kwizzapp.com.kwizzapp.dashboard.DashboardFragment
 import kwizzapp.com.kwizzapp.helper.Global
 import kwizzapp.com.kwizzapp.helper.processRequest
@@ -42,6 +41,7 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import org.jetbrains.anko.startActivity
 import android.content.pm.PackageManager
 import android.os.Build
+import kwizzapp.com.kwizzapp.Constants.firebaseAnalytics
 
 
 class MainActivity : AppCompatActivity(),
@@ -51,12 +51,16 @@ class MainActivity : AppCompatActivity(),
         QuizFragment.OnFragmentInteractionListener, MultiplayerResultFragment.OnFragmentInteractionListener,
         SinglePlayQuizFragment.OnFragmentInteractionListener, SinglePlayResultFragment.OnFragmentInteractionListener {
 
+//    companion object {
+//        lateinit var firebaseAnalytics : FirebaseAnalytics
+//    }
+
     @Inject
     lateinit var userService: IUser
     private lateinit var toolBar: Toolbar
     private lateinit var compositeDisposable: CompositeDisposable
     private var back_pressed = 0L
-    private lateinit var libPlayGame : LibPlayGame
+    private lateinit var libPlayGame: LibPlayGame
     private lateinit var firebaseRemoteConfig: FirebaseRemoteConfig
 
 
@@ -66,11 +70,11 @@ class MainActivity : AppCompatActivity(),
 
         firebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
 
-        firebaseRemoteConfig.fetch(0).addOnCompleteListener(this){ task ->
-            if (task.isSuccessful){
+        firebaseRemoteConfig.fetch(0).addOnCompleteListener(this) { task ->
+            if (task.isSuccessful) {
                 logD("Remote message fetched successfully.")
                 firebaseRemoteConfig.activateFetched()
-            }else{
+            } else {
                 logD("Remote message fetched failed")
             }
             getAppVersionCode()
@@ -119,7 +123,7 @@ class MainActivity : AppCompatActivity(),
 
         compositeDisposable = CompositeDisposable()
 
-//        val userInfoFragment = MultiplayerResultFragment()
+//        val userInfoFragment = GameMenuFragment()
 //        switchToFragment(userInfoFragment)
 
         if (isSignedIn()) {
@@ -259,7 +263,7 @@ class MainActivity : AppCompatActivity(),
                 val message = "If you left the game your bid points will be deducted.\nDo you want to leave the game?"
                 showAlert(message)
             }
-            else ->{
+            else -> {
                 startActivity<MainActivity>()
                 finish()
             }
@@ -280,10 +284,10 @@ class MainActivity : AppCompatActivity(),
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode != 0){
+        if (resultCode != 0) {
             libPlayGame = LibPlayGame(this)
             libPlayGame.onActivityResult(requestCode, resultCode, data)
-        }else{
+        } else {
             hideProgress()
         }
     }
