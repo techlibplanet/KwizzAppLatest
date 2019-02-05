@@ -361,6 +361,11 @@ class MultiplayerResultFragment : Fragment(), View.OnClickListener {
         fun onFragmentInteraction(uri: Uri)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        context?.unregisterReceiver(resultBroadcastReceiver)
+    }
+
     companion object {
         const val ACTION_RESULT_RECEIVED = "com.technoholicdeveloper.kwizzapp.ACTION_RESULT_RECEIVED"
     }
