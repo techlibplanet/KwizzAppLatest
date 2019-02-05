@@ -34,7 +34,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/space10dp"
-                    android:text="@string/question"
+                    android:text="Loading..."
                     android:textAlignment="textStart"
                     android:textColor="@color/colorWhite"
                     android:textStyle="bold" />
@@ -71,7 +71,7 @@
                             android:paddingTop="@dimen/space10dp"
                             android:paddingEnd="@dimen/space5dp"
                             android:paddingBottom="@dimen/space10dp"
-                            android:text="@string/question"
+                            android:text="Loading..."
                             android:textAlignment="textStart" />
 
                     </LinearLayout>
@@ -110,7 +110,7 @@
                             android:paddingTop="@dimen/space10dp"
                             android:paddingEnd="@dimen/space5dp"
                             android:paddingBottom="@dimen/space10dp"
-                            android:text="@string/question"
+                            android:text="Loading..."
                             android:textAlignment="textStart" />
 
                     </LinearLayout>
@@ -149,7 +149,7 @@
                             android:paddingTop="@dimen/space10dp"
                             android:paddingEnd="@dimen/space5dp"
                             android:paddingBottom="@dimen/space10dp"
-                            android:text="@string/question"
+                            android:text="Loading..."
                             android:textAlignment="textStart" />
 
                     </LinearLayout>
@@ -189,7 +189,7 @@
                             android:paddingTop="@dimen/space10dp"
                             android:paddingEnd="@dimen/space5dp"
                             android:paddingBottom="@dimen/space10dp"
-                            android:text="@string/question"
+                            android:text="Loading..."
                             android:textAlignment="textStart" />
 
                     </LinearLayout>
@@ -230,7 +230,7 @@
                             android:paddingTop="@dimen/space10dp"
                             android:paddingEnd="@dimen/space5dp"
                             android:paddingBottom="@dimen/space10dp"
-                            android:text="@string/question"
+                            android:text="Loading..."
                             android:textAlignment="textStart" />
 
                     </LinearLayout>

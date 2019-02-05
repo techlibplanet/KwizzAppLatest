@@ -11,8 +11,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.example.mayank.kwizzapp.dependency.components.DaggerInjectFragmentComponent
 import io.reactivex.disposables.CompositeDisposable
-import kotlinx.android.synthetic.main.wallet_menu_layout.*
-import kwizzapp.com.kwizzapp.Constants
 import kwizzapp.com.kwizzapp.Constants.firebaseAnalytics
 import kwizzapp.com.kwizzapp.KwizzApp
 import kwizzapp.com.kwizzapp.R
@@ -36,8 +34,6 @@ class WalletMenuFragment : Fragment(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-        }
         val depComponent = DaggerInjectFragmentComponent.builder()
                 .applicationComponent(KwizzApp.applicationComponent)
                 .build()
@@ -63,7 +59,7 @@ class WalletMenuFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         val params = Bundle()
         params.putInt("WalletButton", v?.id!!)
-        var eventName : String? = null
+        var eventName = ""
         when (v.id) {
             R.id.addPointsLayout -> {
                 eventName = "AddPoints"
@@ -89,7 +85,7 @@ class WalletMenuFragment : Fragment(), View.OnClickListener {
                 switchToFragmentBackStack(transactionFragment)
             }
         }
-        firebaseAnalytics.logEvent(eventName!!, params)
+        firebaseAnalytics.logEvent(eventName, params)
     }
 
     private fun checkBalance() {
@@ -148,6 +144,4 @@ class WalletMenuFragment : Fragment(), View.OnClickListener {
         fun onFragmentInteraction(uri: Uri)
     }
 
-    companion object {
-    }
 }

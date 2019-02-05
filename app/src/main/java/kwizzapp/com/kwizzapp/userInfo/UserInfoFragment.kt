@@ -155,6 +155,13 @@ class UserInfoFragment : Fragment(), View.OnClickListener {
             else -> textInputLayoutEmail.error = null
         }
 
+        when{
+            dataBinding.userInfoVm?.mobileNumber?.length!! <= 10 ->{
+                textInputLayoutMobileNumber.error = "Enter valid 10 digit Mobile Number."
+                return false
+            }
+        }
+
         if (!Global.checkInternet(activity!!)){
             return false
         }

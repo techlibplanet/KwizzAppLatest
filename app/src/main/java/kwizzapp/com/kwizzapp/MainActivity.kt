@@ -118,7 +118,6 @@ class MainActivity : AppCompatActivity(),
 
         compositeDisposable = CompositeDisposable()
 
-
         if (isSignedIn()) {
             val mobileNumber = getPref(SharedPrefKeys.MOBILE_NUMBER, "")
             if (mobileNumber != "") {
