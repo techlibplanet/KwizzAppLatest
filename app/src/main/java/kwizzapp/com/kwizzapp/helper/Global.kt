@@ -11,6 +11,7 @@ import org.jetbrains.anko.toast
 import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.regex.Pattern
 
 class Global {
 
@@ -19,8 +20,6 @@ class Global {
 
         @SuppressLint("SimpleDateFormat")
         fun getFormatDate(date : Date): String? {
-            val calendar = Calendar.getInstance()
-            val date = calendar.time
             val formatter : java.text.DateFormat = SimpleDateFormat(DISPLAY_FULL_DATE_FORMAT)
             return formatter.format(date)
         }
@@ -51,6 +50,16 @@ class Global {
         fun getDateFormat(date : Date): String? {
             val formatter : java.text.DateFormat = SimpleDateFormat(DISPLAY_FULL_DATE_FORMAT)
             return formatter.format(date)
+        }
+
+        fun isValidPhone(phone: String): Boolean {
+            var check = false
+            check = if (!Pattern.matches("[a-zA-Z]+", phone)) {
+                !(phone.length <= 9 || phone.length > 10)
+            } else {
+                false
+            }
+            return check
         }
 
 

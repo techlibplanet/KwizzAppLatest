@@ -17,7 +17,6 @@ import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.iid.FirebaseInstanceId
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.fragment_user_info.*
-import kwizzapp.com.kwizzapp.Constants
 import kwizzapp.com.kwizzapp.Constants.firebaseAnalytics
 import kwizzapp.com.kwizzapp.KwizzApp
 import kwizzapp.com.kwizzapp.R
@@ -155,11 +154,11 @@ class UserInfoFragment : Fragment(), View.OnClickListener {
             else -> textInputLayoutEmail.error = null
         }
 
-        when{
-            dataBinding.userInfoVm?.mobileNumber?.length!! <= 10 ->{
-                textInputLayoutMobileNumber.error = "Enter valid 10 digit Mobile Number."
-                return false
-            }
+        if (Global.isValidPhone(dataBinding.userInfoVm?.mobileNumber.toString())) {
+            textInputLayoutMobileNumber.isErrorEnabled = false
+        } else {
+            textInputLayoutMobileNumber.error = "Please Enter Valid 10 digit Mobile Number."
+            return false
         }
 
         if (!Global.checkInternet(activity!!)){

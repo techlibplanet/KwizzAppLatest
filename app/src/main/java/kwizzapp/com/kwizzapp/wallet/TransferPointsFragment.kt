@@ -14,7 +14,6 @@ import com.google.firebase.perf.FirebasePerformance
 import com.google.firebase.perf.metrics.Trace
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.transfer_points_layout.*
-import kwizzapp.com.kwizzapp.Constants
 import kwizzapp.com.kwizzapp.Constants.firebaseAnalytics
 import kwizzapp.com.kwizzapp.KwizzApp
 import kwizzapp.com.kwizzapp.R
@@ -29,7 +28,6 @@ import net.rmitsolutions.mfexpert.lms.helpers.*
 import org.jetbrains.anko.find
 import org.jetbrains.anko.support.v4.startActivity
 import java.lang.Exception
-import java.util.*
 import javax.inject.Inject
 
 
