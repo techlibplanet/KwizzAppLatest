@@ -316,10 +316,10 @@ class QuizFragment : Fragment(), View.OnClickListener {
 
     private fun setTimerValues() {
         var time = -1
-        time = if (subjectCode == "aptitude") {
-            6
-        } else {
-            1
+        time = when (subjectCode) {
+            "aptitude" -> 6
+            "reasoning" -> 6
+            else -> 1
         }
         timeCountInMilliSeconds = (time * 10 * 1000).toLong()
     }

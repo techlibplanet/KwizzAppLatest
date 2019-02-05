@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:bind="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
     <data class="WithdrawalPointsBinding">
+
         <import type="android.view.View" />
 
         <variable
             name="DisableBankDetails"
             type="java.lang.Boolean" />
+
         <variable
             name="WithdrawalPointsVm"
-            type="kwizzapp.com.kwizzapp.viewmodels.WithdrawalPoints"/>
+            type="kwizzapp.com.kwizzapp.viewmodels.WithdrawalPoints" />
     </data>
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".wallet.WithdrawalPointsFragment">
 
-        <include layout="@layout/withdrawal_points_layout"
-            bind:WithdrawalPointsVm="@{WithdrawalPointsVm}"
-            bind:DisableBankDetails="@{DisableBankDetails}"/>
+        <include
+            layout="@layout/withdrawal_points_layout"
+            bind:DisableBankDetails="@{DisableBankDetails}"
+            bind:WithdrawalPointsVm="@{WithdrawalPointsVm}" />
 
     </FrameLayout>
 </layout>

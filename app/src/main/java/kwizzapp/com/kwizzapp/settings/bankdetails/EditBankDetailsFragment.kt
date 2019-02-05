@@ -92,5 +92,5 @@ class EditBankDetailsFragment : Fragment(), View.OnClickListener {
     interface OnFragmentInteractionListener {
         fun onFragmentInteraction(uri: Uri)
     }
-    
+
 }

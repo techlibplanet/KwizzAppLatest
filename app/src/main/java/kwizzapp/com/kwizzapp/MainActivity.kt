@@ -152,7 +152,7 @@ class MainActivity : AppCompatActivity(),
     private fun getAppVersionCode() {
         val remoteVersionCode = firebaseRemoteConfig.getString(Constants.APP_VERSION_CODE)
         val remoteVersionName = firebaseRemoteConfig.getString(Constants.APP_VERSION_NAME)
-        toast("App Version Code - $remoteVersionCode\nApp Version Name $remoteVersionName")
+        //toast("App Version Code - $remoteVersionCode\nApp Version Name $remoteVersionName")
         logD("App Version Code - $remoteVersionCode\nApp Version Name $remoteVersionName")
         try {
             val pInfo = packageManager.getPackageInfo(packageName, 0)

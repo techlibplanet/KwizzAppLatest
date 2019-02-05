@@ -9,9 +9,9 @@
         android:id="@+id/result_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ResultScreen"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        tools:context=".ResultScreen">
 
 
         <android.support.v7.widget.CardView
@@ -62,23 +62,21 @@
         </android.support.v7.widget.CardView>
 
         <TextView
-            android:layout_marginTop="@dimen/dimen_5dp"
             style="@style/TitleText"
-            android:layout_marginStart="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/dimen_5dp"
             android:text="Quiz Result"
-            android:textColor="@color/colorWhite"/>
+            android:textColor="@color/colorWhite" />
 
         <android.support.v7.widget.RecyclerView
-            android:scrollbarThumbVertical="@drawable/recycler_scroll_bar"
-            android:layout_marginTop="@dimen/dimen_16dp"
+            android:id="@+id/result_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/result_recycler_view"
-            android:scrollbars="vertical">
-        </android.support.v7.widget.RecyclerView>
-
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:scrollbarThumbVertical="@drawable/recycler_scroll_bar"
+            android:scrollbars="vertical"></android.support.v7.widget.RecyclerView>
 
 
     </LinearLayout>

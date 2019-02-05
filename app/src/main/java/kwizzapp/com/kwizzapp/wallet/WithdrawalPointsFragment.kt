@@ -109,8 +109,8 @@ class WithdrawalPointsFragment : Fragment(), View.OnClickListener {
         withdrawal.accountNumber = accountNumber
         withdrawal.ifscCode = ifscCode
         withdrawal.productInfo = "Withdrawn points by itself."
-        withdrawal.addedOn = Global.getFormatDate(Calendar.getInstance().time)
-        withdrawal.createdOn = Global.getFormatDate(Calendar.getInstance().time)
+        withdrawal.addedOn = System.currentTimeMillis().toString()
+        withdrawal.createdOn = System.currentTimeMillis().toString()
         withdrawal.transactionType = "Debited"
         withdrawal.status = "Processed"
 

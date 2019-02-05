@@ -19,7 +19,7 @@ android {
         applicationId "com.kwizzapp"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 8
+        versionCode 12
         versionName "1.1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -91,11 +91,6 @@ dependencies {
     implementation "android.arch.persistence.room:runtime:${arch_version}}"
     kapt "android.arch.persistence.room:compiler:${arch_version}"
     implementation "android.arch.persistence.room:rxjava2:${arch_version}"
-
-    // PayUMoney
-    implementation('com.payumoney.sdkui:plug-n-play:1.4.0') {
-        exclude module: 'support-v4'
-    }
 
     // Firebase Core
     implementation 'com.google.firebase:firebase-core:16.0.6'

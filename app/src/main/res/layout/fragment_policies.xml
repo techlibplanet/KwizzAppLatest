@@ -2,15 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
     android:layout_marginTop="?actionBarSize"
+    android:background="@drawable/background"
     tools:context="kwizzapp.com.kwizzapp.settings.policies.PoliciesFragment">
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/policies_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/policies_recycler_view"
-        android:scrollbars="vertical">
-    </android.support.v7.widget.RecyclerView>
+        android:scrollbars="vertical"></android.support.v7.widget.RecyclerView>
 
 </FrameLayout>

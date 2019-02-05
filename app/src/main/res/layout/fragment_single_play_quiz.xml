@@ -4,6 +4,6 @@
     android:layout_height="match_parent"
     tools:context="kwizzapp.com.kwizzapp.singleplay.SinglePlayQuizFragment">
 
-    <include layout="@layout/quiz_layout"/>
+    <include layout="@layout/quiz_layout" />
 
 </FrameLayout>

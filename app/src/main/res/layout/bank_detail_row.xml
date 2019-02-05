@@ -1,42 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
-    <data class= "BankDetailBinding">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="BankDetailBinding">
+
         <variable
             name="BankDetailVm"
-            type="kwizzapp.com.kwizzapp.viewmodels.SettingVm.BankDetailVm"/>
+            type="kwizzapp.com.kwizzapp.viewmodels.SettingVm.BankDetailVm" />
     </data>
 
     <android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <android.support.v7.widget.CardView
-            android:layout_marginTop="@dimen/dimen_10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="@dimen/dimen_2dp"
-            app:cardElevation="@dimen/dimen_2dp">
+            app:cardElevation="@dimen/dimen_2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/space10dp">
+                android:layout_margin="@dimen/space10dp"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_weight="1.8"
-                    android:padding="@dimen/dimen_5dp"
-                    android:text="@{BankDetailVm.textLabel}"
                     android:id="@+id/textLabelProfile"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"
+                    android:padding="@dimen/dimen_5dp"
+                    android:text="@{BankDetailVm.textLabel}" />
 
 
                 <TextView
-                    android:layout_weight="1"
-                    android:padding="@dimen/dimen_5dp"
-                    android:text="@{BankDetailVm.textData}"
                     android:id="@+id/textDataProfile"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/dimen_5dp"
+                    android:text="@{BankDetailVm.textData}" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>

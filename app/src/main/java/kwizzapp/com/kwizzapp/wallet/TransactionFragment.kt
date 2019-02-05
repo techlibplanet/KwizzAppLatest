@@ -80,7 +80,7 @@ class TransactionFragment : Fragment() {
                                         for (data in transactions) {
                                             val transactions = TransactionDetailsVm()
                                             when {
-                                                data.transferTo == "" && data.receivedFrom == "" -> transactions.textUserName = data.mobileNumber
+                                                data.transferTo == "" && data.receivedFrom == "" -> transactions.textUserName = "${data.firstName} ${data.lastName}"
                                                 data.transactionType.toString() == Constants.TRANSACTION_TYPE_DEBITED -> transactions.textUserName = data.transferTo
                                                 else -> transactions.textUserName = data.receivedFrom
                                             }

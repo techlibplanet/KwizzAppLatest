@@ -237,7 +237,7 @@ class MultiplayerResultFragment : Fragment(), View.OnClickListener {
                     //showDialogResult(activity!!, "Sorry", "It's a Tie", "Your bid points will credited to your wallet", R.mipmap.ic_loose)
                     updateResult.displayName = displayName
                     updateResult.amount = amount
-                    updateResult.timeStamp = Global.getFormatDate(Calendar.getInstance().time)
+                    updateResult.timeStamp = System.currentTimeMillis().toString()
                     updateResult.productInfo = "Points refund due to tie in Quiz."
                     updateBalance(updateResult)
                     show = true
@@ -251,7 +251,7 @@ class MultiplayerResultFragment : Fragment(), View.OnClickListener {
                     val totalAmount = (amount?.times(LibGameConstants.GameConstants.mFinishedParticipants.size))?.times(80)?.div(100)
                     updateResult.displayName = displayName
                     updateResult.amount = totalAmount
-                    updateResult.timeStamp = Global.getFormatDate(Calendar.getInstance().time)
+                    updateResult.timeStamp = System.currentTimeMillis().toString()
                     updateResult.productInfo = "You have won for Quiz."
                     updateBalance(updateResult)
                     show = true

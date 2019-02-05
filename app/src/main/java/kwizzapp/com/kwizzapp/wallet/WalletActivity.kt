@@ -74,6 +74,7 @@ class WalletActivity : AppCompatActivity(), WalletMenuFragment.OnFragmentInterac
     }
 
     override fun onPaymentError(errorCode: Int, response: String?) {
+        hideProgress()
         when (errorCode) {
             Checkout.NETWORK_ERROR -> toast("Network error occourred")
             Checkout.PAYMENT_CANCELED -> toast("Payment Cancelled")
@@ -84,12 +85,11 @@ class WalletActivity : AppCompatActivity(), WalletMenuFragment.OnFragmentInterac
 
 
     override fun onPaymentSuccess(razorpayPaymentID: String?) {
-        showProgress()
         getTransactionDetails(razorpayPaymentID!!)
     }
 
     // Get the transaction details using Razorpay
-    private fun getTransactionDetails(paymentId : String) {
+    private fun getTransactionDetails(paymentId: String) {
         myTrace.start()
         val payment = Transactions.AddPointToServer()
         payment.paymentId = paymentId
@@ -105,7 +105,7 @@ class WalletActivity : AppCompatActivity(), WalletMenuFragment.OnFragmentInterac
                 .processRequest(
                         { transactions ->
                             hideProgress()
-                            if (transactions.isSuccess){
+                            if (transactions.isSuccess) {
                                 val bundle = Bundle()
                                 bundle.putDouble("Amount", transactions.balance)
                                 bundle.putString("MobileNumber", transactions.mobileNumber)
@@ -116,7 +116,7 @@ class WalletActivity : AppCompatActivity(), WalletMenuFragment.OnFragmentInterac
                                 myTrace.stop()
                                 finish()
                                 startActivity<WalletActivity>()
-                            }else{
+                            } else {
                                 myTrace.incrementMetric("add_points_failed", 1)
                                 myTrace.stop()
                                 showDialog(this, "Error", transactions.message)

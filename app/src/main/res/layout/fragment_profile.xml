@@ -1,14 +1,15 @@
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data class = "ProfileBinding">
+    <data class="ProfileBinding">
+
         <variable
             name="ProfileVm"
-            type="kwizzapp.com.kwizzapp.viewmodels.ProfileVm"/>
+            type="kwizzapp.com.kwizzapp.viewmodels.ProfileVm" />
 
     </data>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="?actionBarSize"
@@ -53,8 +54,8 @@
                             <android.support.v7.widget.CardView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                app:cardPreventCornerOverlap="false"
-                                app:cardCornerRadius="48dp">
+                                app:cardCornerRadius="48dp"
+                                app:cardPreventCornerOverlap="false">
 
                                 <ImageView
                                     android:id="@+id/player_image"
@@ -78,14 +79,14 @@
                                 android:textStyle="bold" />
 
                             <ImageButton
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:foreground="?android:attr/selectableItemBackground"
                                 android:id="@+id/editProfileImage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="end"
                                 android:background="@color/colorWhite"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?android:attr/selectableItemBackground"
                                 android:padding="@dimen/dimen_10dp"
                                 android:src="@drawable/ic_edit_blue" />
                         </LinearLayout>
@@ -256,14 +257,14 @@
                         android:textColor="@color/colorWhite" />
 
                     <ImageView
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:foreground="?android:attr/selectableItemBackground"
                         android:id="@+id/editBankDetails"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:layout_marginEnd="@dimen/space10dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
                         android:paddingStart="@dimen/space10dp"
                         android:paddingEnd="@dimen/space10dp"
                         android:src="@drawable/ic_edit_white" />

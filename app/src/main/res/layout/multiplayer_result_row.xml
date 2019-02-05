@@ -4,20 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/dimen_16dp"
-    android:layout_marginEnd="@dimen/dimen_16dp"
     android:layout_marginTop="4dp"
+    android:layout_marginEnd="@dimen/dimen_16dp"
     android:layout_marginBottom="4dp"
     android:orientation="horizontal">
 
     <android.support.v7.widget.CardView
-        app:cardCornerRadius="@dimen/dimen_5dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/dimen_5dp">
 
         <LinearLayout
-            android:layout_margin="@dimen/space16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space16dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -42,9 +42,9 @@
                     android:text="Mayank Sharma" />
 
                 <LinearLayout
-                    android:layout_marginTop="@dimen/space8dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/space8dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -74,57 +74,57 @@
                 </LinearLayout>
 
                 <View
-                    android:layout_marginTop="4dp"
                     android:layout_width="match_parent"
                     android:layout_height="1px"
-                    android:background="@color/colorPrimary"/>
+                    android:layout_marginTop="4dp"
+                    android:background="@color/colorPrimary" />
 
 
                 <LinearLayout
-                    android:layout_marginTop="@dimen/space8dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/space8dp"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/textViewTotalQuestion"
-                        android:textColor="@color/colorPrimary"
-                        android:textAlignment="textStart"
                         style="@style/SmallTitleText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="10" />
+                        android:text="10"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorPrimary" />
 
                     <TextView
                         android:id="@+id/textViewDropQuestion"
-                        android:textColor="@color/colorOrange"
-                        android:textAlignment="textStart"
                         style="@style/SmallTitleText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="0" />
+                        android:text="0"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorOrange" />
 
                     <TextView
                         android:id="@+id/textViewWrongAnswer"
-                        android:textColor="@color/colorRed"
-                        android:textAlignment="textStart"
                         style="@style/SmallTitleText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="0" />
+                        android:text="0"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorRed" />
 
                     <TextView
                         android:id="@+id/textViewRightAnswer"
-                        android:textColor="@color/colorGreen"
-                        android:textAlignment="textStart"
                         style="@style/SmallTitleText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="0" />
+                        android:text="0"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorGreen" />
                 </LinearLayout>
             </LinearLayout>
 

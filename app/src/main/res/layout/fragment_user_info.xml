@@ -53,6 +53,7 @@
                         android:maxLines="1"
                         android:text="@={UserInfoVm.firstName}" />
                 </android.support.design.widget.TextInputLayout>
+
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/textInputLayoutLastName"
                     android:layout_width="300dp"
@@ -69,6 +70,7 @@
                         android:maxLines="1"
                         android:text="@={UserInfoVm.lastName}" />
                 </android.support.design.widget.TextInputLayout>
+
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/textInputLayoutMobileNumber"
                     android:layout_width="300dp"
@@ -82,11 +84,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Mobile Number"
-                        android:maxLines="1"
                         android:inputType="phone"
                         android:maxLength="10"
+                        android:maxLines="1"
                         android:text="@={UserInfoVm.mobileNumber}" />
                 </android.support.design.widget.TextInputLayout>
+
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/textInputLayoutEmail"
                     android:layout_width="300dp"

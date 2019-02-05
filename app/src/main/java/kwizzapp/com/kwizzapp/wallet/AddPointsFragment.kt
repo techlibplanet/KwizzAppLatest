@@ -71,6 +71,7 @@ class AddPointsFragment : Fragment(), View.OnClickListener {
 
     // By Using Razorpay
     private fun addPointsRazorpay() {
+        showProgress()
         getOrderId()
     }
 
@@ -88,10 +89,13 @@ class AddPointsFragment : Fragment(), View.OnClickListener {
                             if (order.status == "created") {
                                 startPayment(order.id)
                             } else {
+                                hideProgress()
                                 toast("${order.status}")
                             }
                         },
                         { err ->
+                            hideProgress()
+                            toast(err)
                             logD(err.toString())
                         }
                 ))

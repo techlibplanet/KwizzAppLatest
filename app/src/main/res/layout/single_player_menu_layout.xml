@@ -125,14 +125,14 @@
 
 
             <!--<Button-->
-                <!--android:textSize="@dimen/dimen_24sp"-->
-                <!--style="?borderlessButtonStyle"-->
-                <!--android:id="@+id/buttonStart"-->
-                <!--android:layout_width="200dp"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginTop="@dimen/dimen_30dp"-->
-                <!--android:text="Start"-->
-                <!--android:textColor="@color/colorGreen" />-->
+            <!--android:textSize="@dimen/dimen_24sp"-->
+            <!--style="?borderlessButtonStyle"-->
+            <!--android:id="@+id/buttonStart"-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/dimen_30dp"-->
+            <!--android:text="Start"-->
+            <!--android:textColor="@color/colorGreen" />-->
 
         </LinearLayout>
 

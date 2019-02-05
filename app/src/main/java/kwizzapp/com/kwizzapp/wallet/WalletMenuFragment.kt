@@ -104,7 +104,8 @@ class WalletMenuFragment : Fragment(), View.OnClickListener {
                                     response.isSuccess -> {
                                         hideProgress()
                                         val amount = Global.doubleValueFormat(response.balance)
-                                        walletPoints.text = "Points - ${amount} ${activity?.getString(R.string.rupeeSymbol)}"
+//                                        walletPoints.text = "Points - ${amount} ${activity?.getString(R.string.rupeeSymbol)}"
+                                        walletPoints.text = "Points - ${amount}"
                                     }
                                     else -> {
                                         hideProgress()

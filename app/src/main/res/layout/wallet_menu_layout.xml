@@ -12,26 +12,25 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
             <android.support.v7.widget.CardView
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                >
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                app:cardCornerRadius="10dp">
 
                 <TextView
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/dimen_16sp"
-                    android:padding="@dimen/dimen_16dp"
+                    android:id="@+id/walletPoints"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/walletPoints"
-                    android:text="Points - Loading..."/>
+                    android:padding="@dimen/dimen_16dp"
+                    android:text="Points - Loading..."
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textStyle="bold" />
 
             </android.support.v7.widget.CardView>
 
@@ -43,14 +42,14 @@
                 android:orientation="horizontal">
 
                 <android.support.v7.widget.CardView
-                    app:cardCornerRadius="@dimen/dimen_10dp"
                     android:id="@+id/addPointsLayout"
                     android:layout_width="150dp"
                     android:layout_height="170dp"
                     android:layout_margin="@dimen/dimen_10dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:foreground="?android:attr/selectableItemBackground">
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="@dimen/dimen_10dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -66,25 +65,25 @@
                             android:src="@drawable/ic_add_points" />
 
                         <TextView
-                            android:textSize="@dimen/dimen_16sp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dimen_10dp"
                             android:text="Add"
+                            android:textSize="@dimen/dimen_16sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    app:cardCornerRadius="@dimen/dimen_10dp"
                     android:id="@+id/transferLayout"
                     android:layout_width="150dp"
                     android:layout_height="170dp"
                     android:layout_margin="@dimen/dimen_10dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:foreground="?android:attr/selectableItemBackground">
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="@dimen/dimen_10dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -100,11 +99,11 @@
                             android:src="@drawable/ic_transfer" />
 
                         <TextView
-                            android:textSize="@dimen/dimen_16sp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dimen_10dp"
                             android:text="Transfer"
+                            android:textSize="@dimen/dimen_16sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -119,14 +118,14 @@
                 android:orientation="horizontal">
 
                 <android.support.v7.widget.CardView
-                    app:cardCornerRadius="@dimen/dimen_10dp"
                     android:id="@+id/withdrawalLayout"
                     android:layout_width="150dp"
                     android:layout_height="170dp"
                     android:layout_margin="@dimen/dimen_10dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:foreground="?android:attr/selectableItemBackground">
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="@dimen/dimen_10dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -142,25 +141,25 @@
                             android:src="@drawable/ic_withdrawal" />
 
                         <TextView
-                            android:textSize="@dimen/dimen_16sp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dimen_10dp"
                             android:text="Withdrawal"
+                            android:textSize="@dimen/dimen_16sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    app:cardCornerRadius="@dimen/dimen_10dp"
                     android:id="@+id/transactionLayout"
                     android:layout_width="150dp"
                     android:layout_height="170dp"
                     android:layout_margin="@dimen/dimen_10dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:foreground="?android:attr/selectableItemBackground">
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="@dimen/dimen_10dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -176,11 +175,11 @@
                             android:src="@drawable/ic_transactions" />
 
                         <TextView
-                            android:textSize="@dimen/dimen_16sp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dimen_10dp"
                             android:text="Transactions"
+                            android:textSize="@dimen/dimen_16sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>

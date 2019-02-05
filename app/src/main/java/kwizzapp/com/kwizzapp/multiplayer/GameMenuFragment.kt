@@ -64,7 +64,7 @@ class GameMenuFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         val params = Bundle()
         params.putInt("GameMode", v?.id!!)
-        var gameModeName: String? = null
+        var gameModeName = ""
 
         when (v.id) {
             R.id.singlePlayerLayout -> {
@@ -72,7 +72,6 @@ class GameMenuFragment : Fragment(), View.OnClickListener {
                     gameModeName = "SinglePlayer"
                     val singlePlayDetails = SinglePlayMenuFragment()
                     switchToFragmentBackStack(singlePlayDetails)
-//                    toast("Coming soon...")
                 }
             }
             R.id.quickGameLayout -> {
@@ -99,10 +98,8 @@ class GameMenuFragment : Fragment(), View.OnClickListener {
                 }
             }
         }
-        if (firebaseAnalytics==null){
-            firebaseAnalytics = FirebaseAnalytics.getInstance(activity!!)
-        }
-        firebaseAnalytics.logEvent(gameModeName!!, params)
+
+        firebaseAnalytics.logEvent(gameModeName, params)
     }
 
     private fun validate(): Boolean {
@@ -141,6 +138,7 @@ class GameMenuFragment : Fragment(), View.OnClickListener {
                                         }.show()
                             }
                         } else {
+                            hideProgress()
                             showDialog(activity!!, "Error", response.message)
                             Global.updateCrashlyticsMessage(checkBalance.mobileNumber!!, "Error while checking points on Game Menu Fragment", "CheckBalance", Exception(response.message))
                         }

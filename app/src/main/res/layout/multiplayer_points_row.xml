@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <data class= "ResultPointsBinding">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="ResultPointsBinding">
+
         <variable
             name="ResultPointsVm"
-            type="kwizzapp.com.kwizzapp.viewmodels.ResultViewModel.MultiplayerPointsVm"/>
+            type="kwizzapp.com.kwizzapp.viewmodels.ResultViewModel.MultiplayerPointsVm" />
     </data>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -23,13 +25,12 @@
 
                 <ImageView
                     android:id="@+id/playerDisplayImage"
-                    android:layout_marginTop="@dimen/dimen_2dp"
-                    android:layout_marginStart="@dimen/dimen_2dp"
                     android:layout_width="36dp"
-                    android:layout_height="36dp" />
+                    android:layout_height="36dp"
+                    android:layout_marginStart="@dimen/dimen_2dp"
+                    android:layout_marginTop="@dimen/dimen_2dp" />
 
                 <TextView
-                    android:textSize="@dimen/dimen_12sp"
                     android:id="@+id/textViewPlayerName"
                     style="@style/DescriptionText"
                     android:layout_width="match_parent"
@@ -38,10 +39,10 @@
                     android:layout_margin="@dimen/space10dp"
                     android:layout_weight="0.8"
                     android:gravity="start"
-                    android:text="Player Name" />
+                    android:text="Player Name"
+                    android:textSize="@dimen/dimen_12sp" />
 
                 <TextView
-                    android:textSize="@dimen/dimen_12sp"
                     android:id="@+id/textViewScore"
                     style="@style/DescriptionText"
                     android:layout_width="match_parent"
@@ -49,10 +50,10 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:gravity="start"
-                    android:text="SC" />
+                    android:text="SC"
+                    android:textSize="@dimen/dimen_12sp" />
 
                 <TextView
-                    android:textSize="@dimen/dimen_12sp"
                     android:id="@+id/textViewPointsBid"
                     style="@style/DescriptionText"
                     android:layout_width="match_parent"
@@ -60,10 +61,10 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:gravity="start"
-                    android:text="PB" />
+                    android:text="PB"
+                    android:textSize="@dimen/dimen_12sp" />
 
                 <TextView
-                    android:textSize="@dimen/dimen_12sp"
                     android:id="@+id/textViewPointsLoose"
                     style="@style/DescriptionText"
                     android:layout_width="match_parent"
@@ -72,10 +73,10 @@
                     android:layout_margin="@dimen/space10dp"
                     android:layout_weight="1"
                     android:gravity="start"
-                    android:text="PL" />
+                    android:text="PL"
+                    android:textSize="@dimen/dimen_12sp" />
 
                 <TextView
-                    android:textSize="@dimen/dimen_12sp"
                     android:id="@+id/textViewPointsWin"
                     style="@style/DescriptionText"
                     android:layout_width="match_parent"
@@ -83,10 +84,10 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:gravity="start"
-                    android:text="PW" />
+                    android:text="PW"
+                    android:textSize="@dimen/dimen_12sp" />
 
                 <TextView
-                    android:textSize="@dimen/dimen_12sp"
                     android:id="@+id/textViewTotal"
                     style="@style/DescriptionText"
                     android:layout_width="match_parent"
@@ -95,7 +96,8 @@
                     android:layout_margin="@dimen/space10dp"
                     android:layout_weight="1"
                     android:gravity="start"
-                    android:text="Total" />
+                    android:text="Total"
+                    android:textSize="@dimen/dimen_12sp" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
     </LinearLayout>

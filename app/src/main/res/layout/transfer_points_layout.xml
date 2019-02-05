@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="TransferPointsVm"
             type="kwizzapp.com.kwizzapp.viewmodels.TransferPoints" />

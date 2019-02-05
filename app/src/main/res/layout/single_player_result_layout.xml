@@ -2,6 +2,7 @@
 <layout>
 
     <data>
+
         <variable
             name="SinglePlayResultVm"
             type="kwizzapp.com.kwizzapp.viewmodels.SinglePlayResultVm" />

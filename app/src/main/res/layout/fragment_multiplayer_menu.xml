@@ -4,6 +4,6 @@
     android:layout_height="match_parent"
     tools:context="kwizzapp.com.kwizzapp.multiplayer.MultiplayerMenuFragment">
 
-    <include layout="@layout/game_detail_layout"/>
+    <include layout="@layout/game_detail_layout" />
 
 </FrameLayout>
