@@ -374,6 +374,7 @@ class SinglePlayQuizFragment : Fragment(), View.OnClickListener {
     override fun onDetach() {
         super.onDetach()
         listener = null
+        compositeDisposable.dispose()
     }
 
     interface OnFragmentInteractionListener {

@@ -85,7 +85,7 @@ class TransactionFragment : Fragment() {
                                                 else -> transactions.textUserName = data.receivedFrom
                                             }
                                             transactions.transactionType = data.transactionType
-                                            transactions.textAmount = "${activity?.getString(R.string.rupeeSymbol)} ${data.amount}"
+                                            transactions.textAmount = "${data.amount}"
                                             transactions.textTimeStamp = data.createdOn
                                             transactions.textDescription = data.productInfo
                                             modelList.add(transactions)
@@ -141,6 +141,7 @@ class TransactionFragment : Fragment() {
     override fun onDetach() {
         super.onDetach()
         listener = null
+        compositeDisposable.dispose()
     }
 
     interface OnFragmentInteractionListener {

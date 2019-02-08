@@ -19,6 +19,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.mayank.kwizzapp.dependency.components.DaggerInjectFragmentComponent
 import com.example.mayank.kwizzapp.dialog.ProgressDialog
@@ -78,13 +79,12 @@ class MultiplayerResultFragment : Fragment(), View.OnClickListener {
     val adapter: ResultViewAdapter by lazy { ResultViewAdapter() }
     val adapterPoints: PointsViewAdapter by lazy { PointsViewAdapter() }
     private var libPlayGame: LibPlayGame? = null
-    private lateinit var buttonBack: Button
     private lateinit var list: MutableList<ResultViewModel.MultiplayerResultVm>
     private lateinit var showDialog: ShowDialog
 
     private lateinit var showResultProgress: ProgressDialog
     private val syncIntentFilter = IntentFilter(ACTION_RESULT_RECEIVED)
-    private lateinit var resultLayout: CardView
+    private lateinit var resultLayout: LinearLayout
     private lateinit var achievements: Achievements
     private var win: Boolean = false
     private var displayName: String? = null
@@ -170,6 +170,7 @@ class MultiplayerResultFragment : Fragment(), View.OnClickListener {
 
     private val resultBroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
+            logD("On Result Received called - ${intent.action}")
             if (MultiplayerResultFragment.ACTION_RESULT_RECEIVED == intent.action) {
                 updateScore()
             }

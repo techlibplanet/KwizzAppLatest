@@ -282,9 +282,11 @@ class MultiplayerMenuFragment : Fragment(), View.OnClickListener {
 
     private fun subtractBalance(subtractBalance: Transactions.SubtractBalance) {
         if (Global.checkInternet(activity!!)) {
+            showProgress()
             compositeDisposable.add(transactionService.subtractBalance(subtractBalance)
                     .processRequest(
                             { response ->
+                                hideProgress()
                                 if (response.isSuccess) {
                                     if (countDownTimer != null) {
                                         countDownTimer?.cancel()
@@ -306,11 +308,17 @@ class MultiplayerMenuFragment : Fragment(), View.OnClickListener {
                                 }
 
                             }, { err ->
+                        hideProgress()
                         subtract = false
                         showDialog(activity!!, "Error", err.toString())
                         Global.updateCrashlyticsMessage(subtractBalance.mobileNumber!!, "Error while subtracting points on Game Menu Fragment", "SubtractPoints", Exception(err))
                     }))
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        compositeDisposable.dispose()
     }
 
     private fun stopCountdownTimer() {

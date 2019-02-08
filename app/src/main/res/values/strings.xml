@@ -27,7 +27,6 @@
     <!-- leaderboard Top Scores -->
     <string name="leaderboard_toppers" translatable="false">CgkItOHA_6UQEAIQAQ</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="preference_file_key">kwizzapp_pref_file_key</string>

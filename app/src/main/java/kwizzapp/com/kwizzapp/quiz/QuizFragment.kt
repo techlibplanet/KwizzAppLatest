@@ -54,17 +54,15 @@ class QuizFragment : Fragment(), View.OnClickListener {
     private var rightAnswers = 0
     private var wrongAnswers = 0
     private var dropQuestions = 0
-    private lateinit var textSwitcherCountdown: TextSwitcher
     private var countDownTimer: CountDownTimer? = null
-    private lateinit var textViewCount: TextView
     private var libPlayGame: LibPlayGame? = null
-    private var numberOfRows: Int? = null
     private var progressBar: ProgressBar? = null
     private var timerStatus = TimerStatus.STOPPED
     private var timeCountInMilliSeconds = (1 * 10000).toLong()
     private var textViewSeconds: TextView? = null
     private lateinit var compositeDisposable: CompositeDisposable
     private var show: Boolean = false
+    private var ques_delay = 0L
 
     private enum class TimerStatus {
         STARTED,
@@ -108,54 +106,74 @@ class QuizFragment : Fragment(), View.OnClickListener {
     override fun onClick(view: View?) {
         when (view?.id) {
             R.id.layoutOptionA -> {
-                if (view.find<TextView>(R.id.textViewOptionA).text == answer) {
-                    rightAnswers++
-                } else {
-                    wrongAnswers++
+                when {
+                    System.currentTimeMillis() - ques_delay > 5000 -> {
+                        if (view.find<TextView>(R.id.textViewOptionA).text == answer) {
+                            rightAnswers++
+                        } else {
+                            wrongAnswers++
+                        }
+                        getQuestionFromServer()
+                    }
+                    else -> showWarning()
                 }
-
-                getQuestionFromServer()
-
             }
 
             R.id.layoutOptionB -> {
-                if (view.find<TextView>(R.id.textViewOptionB).text == answer) {
-                    rightAnswers++
-                } else {
-                    wrongAnswers++
+                when {
+                    System.currentTimeMillis() - ques_delay > 5000 -> {
+                        if (view.find<TextView>(R.id.textViewOptionB).text == answer) {
+                            rightAnswers++
+                        } else {
+                            wrongAnswers++
+                        }
+                        getQuestionFromServer()
+                    }
+                    else -> showWarning()
                 }
-
-                getQuestionFromServer()
 
             }
 
             R.id.layoutOptionC -> {
-                if (view.find<TextView>(R.id.textViewOptionC).text == answer) {
-                    rightAnswers++
-                } else {
-                    wrongAnswers++
+                when {
+                    System.currentTimeMillis() - ques_delay > 5000 -> {
+                        if (view.find<TextView>(R.id.textViewOptionC).text == answer) {
+                            rightAnswers++
+                        } else {
+                            wrongAnswers++
+                        }
+                        getQuestionFromServer()
+                    }
+                    else -> showWarning()
                 }
-
-                getQuestionFromServer()
             }
 
             R.id.layoutOptionD -> {
-                if (view.find<TextView>(R.id.textViewOptionD).text == answer) {
-                    rightAnswers++
-                } else {
-                    wrongAnswers++
+                when {
+                    System.currentTimeMillis() - ques_delay > 5000 -> {
+                        if (view.find<TextView>(R.id.textViewOptionD).text == answer) {
+                            rightAnswers++
+                        } else {
+                            wrongAnswers++
+                        }
+                        getQuestionFromServer()
+                    }
+                    else -> showWarning()
                 }
-
-                getQuestionFromServer()
             }
 
             R.id.layoutOptionE -> {
-                if (view.find<TextView>(R.id.textViewOptionE).text == answer) {
-                    rightAnswers++
-                } else {
-                    wrongAnswers++
+                when {
+                    System.currentTimeMillis() - ques_delay > 5000 -> {
+                        if (view.find<TextView>(R.id.textViewOptionE).text == answer) {
+                            rightAnswers++
+                        } else {
+                            wrongAnswers++
+                        }
+                        getQuestionFromServer()
+                    }
+                    else -> showWarning()
                 }
-                getQuestionFromServer()
             }
         }
     }
@@ -203,11 +221,13 @@ class QuizFragment : Fragment(), View.OnClickListener {
                                     if (response.isSuccess) {
                                         q++
                                         hideProgress()
+                                        ques_delay = System.currentTimeMillis()
                                         setQuestionTextViews(response)
                                         reset()
                                     } else {
                                         hideProgress()
                                         stopCountdown()
+                                        ques_delay = System.currentTimeMillis()
                                         showDialog(response.message)
                                         Global.updateCrashlyticsMessage(
                                                 activity?.getPref(SharedPrefKeys.MOBILE_NUMBER, "")!!,
@@ -219,6 +239,7 @@ class QuizFragment : Fragment(), View.OnClickListener {
                                     }
                                 }, { err ->
                             hideProgress()
+                            ques_delay = System.currentTimeMillis()
                             showDialog(err.toString())
                             Global.updateCrashlyticsMessage(
                                     activity?.getPref(SharedPrefKeys.MOBILE_NUMBER, "")!!,
@@ -275,6 +296,10 @@ class QuizFragment : Fragment(), View.OnClickListener {
         view?.find<TextView>(R.id.textViewOptionC)?.text = "${response.optionC}"
         view?.find<TextView>(R.id.textViewOptionD)?.text = "${response.optionD}"
         view?.find<TextView>(R.id.textViewOptionE)?.text = "${response.optionE}"
+    }
+
+    private fun showWarning() {
+        showDialog(activity!!, "Warning", "Answer can submit after 5 seconds.")
     }
 
     private fun getRandomNonRepeatingIntegers(size: Int, min: Int, max: Int): ArrayList<Int> {
@@ -395,13 +420,11 @@ class QuizFragment : Fragment(), View.OnClickListener {
     override fun onDetach() {
         super.onDetach()
         listener = null
+        compositeDisposable.dispose()
     }
 
     interface OnFragmentInteractionListener {
         fun onFragmentInteraction(uri: Uri)
     }
 
-    companion object {
-
-    }
 }

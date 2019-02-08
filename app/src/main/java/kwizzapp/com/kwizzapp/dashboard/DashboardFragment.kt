@@ -46,7 +46,10 @@ class DashboardFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         val params = Bundle()
         params.putInt("DashboardEvents", v?.id!!)
-        var eventName: String ? = null
+        params.putString("MobileNumber", activity?.getPref(SharedPrefKeys.MOBILE_NUMBER, ""))
+        params.putString("Email", activity?.getPref(SharedPrefKeys.EMAIL, ""))
+        params.putString("PlayerId", activity?.getPref(SharedPrefKeys.PLAYER_ID, ""))
+        var eventName = ""
         when (v.id) {
             R.id.logoutLayout -> {
                 eventName = "SignOut"
@@ -73,7 +76,7 @@ class DashboardFragment : Fragment(), View.OnClickListener {
                 startActivity<SettingsActivity>()
             }
         }
-        firebaseAnalytics.logEvent(eventName!!, params)
+        firebaseAnalytics.logEvent(eventName, params)
     }
 
     private fun openGameMenuFragment() {
@@ -99,7 +102,6 @@ class DashboardFragment : Fragment(), View.OnClickListener {
             isSignedIn() -> {
                 val signInClient = GoogleSignIn.getClient(activity!!, GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
                 signInClient.signOut().addOnCompleteListener(activity!!) {
-                    // at this point, the user is signed out.
                     toast("Sign out successfully!")
                     activity?.clearPrefs()
                     val loginFragment = LoginFragment()
@@ -132,7 +134,7 @@ class DashboardFragment : Fragment(), View.OnClickListener {
         super.onAttach(context)
         when (context) {
             is OnFragmentInteractionListener -> listener = context
-            else -> throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+            else -> throw RuntimeException("$context must implement OnFragmentInteractionListener")
         }
     }
 

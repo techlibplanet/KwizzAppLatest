@@ -44,6 +44,5 @@ class TransactionDetailViewHolder(itemView : View) : RecyclerView.ViewHolder(ite
             textAmount.text = "+ ${transactionDetailVm.textAmount}"
             textAmount.setTextColor(context.resources.getColor(R.color.colorGreen))
         }
-
     }
 }

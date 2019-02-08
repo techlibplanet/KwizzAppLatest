@@ -211,8 +211,6 @@ class LibPlayGame(private var activity: Activity) {
                 Log.d(TAG, "Adding sender in realtime")
                 sendBroadcastResult(state, value1, value2, value3)
             }
-
-
         }
 
         if (state == 'A' || state == 'S') {
@@ -254,11 +252,12 @@ class LibPlayGame(private var activity: Activity) {
             GameConstants.mRoomId = null
             GameConstants.mRoomConfig = null
             if (mFinishedParticipants.size != room?.participants?.size) {
-                AlertDialog.Builder(activity).setTitle("Disconnected").setMessage("All players left the game")
+                AlertDialog.Builder(activity).setTitle("Disconnected").setMessage("All players left the game").setCancelable(false)
                         .setPositiveButton("Ok") { dialog, which ->
                             clearData()
                             val intent = Intent(activity, MainActivity::class.java)
                             activity.startActivity(intent)
+                            activity.finish()
                             dialog.dismiss()
                         }.show()
             }

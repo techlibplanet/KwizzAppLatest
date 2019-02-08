@@ -94,8 +94,8 @@ class LoginFragment : Fragment(), View.OnClickListener {
 
             activity?.putPref(SharedPrefKeys.PLAYER_ID, mPlayerId)
             activity?.putPref(SharedPrefKeys.DISPLAY_NAME, player.displayName)
-            activity?.putPref(SharedPrefKeys.HIGH_RES_URI, player.hiResImageUri.path)
-            activity?.putPref(SharedPrefKeys.ICON_IMAGE_URI, player.iconImageUri.path)
+            activity?.putPref(SharedPrefKeys.HIGH_RES_URI, player.hiResImageUri.toString())
+            activity?.putPref(SharedPrefKeys.ICON_IMAGE_URI, player.iconImageUri.toString())
             var nameArray: List<String>? = null
             if (player.name != null) {
                 nameArray = player.name.split(" ")

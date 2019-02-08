@@ -163,7 +163,4 @@ class SinglePlayMenuFragment : Fragment(), View.OnClickListener {
         fun onFragmentInteraction(uri: Uri)
     }
 
-    companion object {
-
-    }
 }

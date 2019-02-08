@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity(),
     private lateinit var toolBar: Toolbar
     private lateinit var compositeDisposable: CompositeDisposable
     private var back_pressed = 0L
-    private lateinit var libPlayGame: LibPlayGame
+    private var libPlayGame: LibPlayGame? = null
     private lateinit var firebaseRemoteConfig: FirebaseRemoteConfig
 
 
@@ -256,8 +256,9 @@ class MainActivity : AppCompatActivity(),
                 showAlert(message)
             }
             else -> {
-                startActivity<MainActivity>()
-                finish()
+//                startActivity<MainActivity>()
+//                finish()
+                libPlayGame?.leaveRoom()
             }
         }
     }
@@ -266,7 +267,7 @@ class MainActivity : AppCompatActivity(),
         AlertDialog.Builder(this).setMessage(message).setPositiveButton("Ok") { dialog, which ->
             super.onBackPressed()
             startActivity<MainActivity>()
-            libPlayGame.leaveRoom()
+            libPlayGame?.leaveRoom()
             finish()
             dialog.dismiss()
         }.setNegativeButton("Cancel") { dialog, which ->
@@ -278,7 +279,7 @@ class MainActivity : AppCompatActivity(),
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode != 0) {
             libPlayGame = LibPlayGame(this)
-            libPlayGame.onActivityResult(requestCode, resultCode, data)
+            libPlayGame?.onActivityResult(requestCode, resultCode, data)
         } else {
             hideProgress()
         }

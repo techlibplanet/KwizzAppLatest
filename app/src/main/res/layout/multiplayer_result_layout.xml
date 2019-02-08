@@ -32,7 +32,6 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:layout_margin="@dimen/space16dp"
-                    android:background="@drawable/circle_background_green"
                     android:padding="@dimen/space8dp"
                     android:src="@drawable/ic_done" />
 

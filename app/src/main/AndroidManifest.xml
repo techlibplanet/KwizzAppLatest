@@ -4,8 +4,8 @@
     package="kwizzapp.com.kwizzapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:name=".KwizzApp"
@@ -15,9 +15,9 @@
         android:roundIcon="@mipmap/ic_app_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
-        tools:replace="android:allowBackup"
-        android:usesCleartextTraffic="true">
+        tools:replace="android:allowBackup">
         <meta-data
             android:name="com.google.android.gms.games.APP_ID"
             android:value="@string/app_id" />
@@ -38,14 +38,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".play.PlayActivity"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".wallet.WalletActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".settings.SettingsActivity"
-            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".settings.SettingsActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".SampleActivity"></activity>
 
         <service android:name=".fcm.MyFirebaseMessagingService">
