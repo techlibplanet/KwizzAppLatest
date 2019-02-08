@@ -137,4 +137,9 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     override fun onMessageSent(p0: String?) {
 
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        compositeDisposable.dispose()
+    }
 }
