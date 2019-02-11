@@ -126,7 +126,6 @@ class ProfileFragment : Fragment() {
         }
     }
 
-
     fun onButtonPressed(uri: Uri) {
         listener?.onFragmentInteraction(uri)
     }

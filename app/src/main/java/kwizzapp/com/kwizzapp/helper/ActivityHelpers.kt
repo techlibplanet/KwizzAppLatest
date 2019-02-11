@@ -1,4 +1,4 @@
-package net.rmitsolutions.mfexpert.lms.helpers
+package com.kwizzapp.helpers
 
 import android.app.Activity
 import android.content.Context
