@@ -11,6 +11,7 @@ import kwizzapp.com.kwizzapp.multiplayer.MultiplayerMenuFragment
 import kwizzapp.com.kwizzapp.multiplayer.MultiplayerResultFragment
 import kwizzapp.com.kwizzapp.quiz.QuizFragment
 import kwizzapp.com.kwizzapp.settings.profilesettings.EditProfileFragment
+import kwizzapp.com.kwizzapp.settings.profilesettings.ProfileFragment
 import kwizzapp.com.kwizzapp.singleplay.SinglePlayQuizFragment
 import kwizzapp.com.kwizzapp.userInfo.UserInfoFragment
 import kwizzapp.com.kwizzapp.wallet.TransactionFragment
@@ -30,4 +31,5 @@ interface InjectFragmentComponent {
     fun injectSinglePlayQuizFragment(singlePlayQuizFragment: SinglePlayQuizFragment)
     fun injectEditProfileFragment(editProfileFragment: EditProfileFragment)
     fun injectTransactionFragment(transactionFragment: TransactionFragment)
+    fun injectProfileFragment(profileFragment: ProfileFragment)
 }

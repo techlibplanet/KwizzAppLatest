@@ -2,6 +2,7 @@ package kwizzapp.com.kwizzapp.models
 
 import android.databinding.BaseObservable
 import android.databinding.ObservableField
+import kwizzapp.com.kwizzapp.viewmodels.CommonResult
 
 class Users {
 
@@ -14,6 +15,7 @@ class Users {
         var playerId: String? = null
         var fcmTokenId : String? =null
         var firebaseInstanceId :  String? = null
+        var timeStamp : String? = null
     }
 
     class UpdateUserInfo{
@@ -41,4 +43,10 @@ class Users {
         var fcmTokenId :  String? = null
         var firebaseInstanceId : String? = null
     }
+
+    class Profile{
+        var playerId : String? = null
+    }
+
+    class ProfileData(val firstName : String, val lastName : String, val mobileNumber : String, val email : String, val displayName : String,  val totalWin : Double, val totalLoose : Double, val balance : Double) : CommonResult()
 }

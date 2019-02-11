@@ -82,6 +82,7 @@ class UserInfoFragment : Fragment(), View.OnClickListener {
                 userInfo.displayName = activity?.getPref(SharedPrefKeys.DISPLAY_NAME, "")
                 userInfo.fcmTokenId  = activity?.getPref(SharedPrefKeys.FCM_TOKEN_ID, "")
                 userInfo.firebaseInstanceId = FirebaseInstanceId.getInstance().id
+                userInfo.timeStamp = System.currentTimeMillis().toString()
                 dataBinding.userInfoVm?.playerId = activity?.getPref(SharedPrefKeys.PLAYER_ID, "")
                 if (validate()) {
                     showProgress()

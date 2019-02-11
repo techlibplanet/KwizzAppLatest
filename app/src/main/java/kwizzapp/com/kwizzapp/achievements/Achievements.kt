@@ -27,7 +27,12 @@ class Achievements(private val activity: Activity) {
 
     fun checkAchievements(score : Int, participants : Int, win : Boolean, trueQues: Int){
         val completeAGame = activity.getPref(SharedPrefKeys.COMPLETE_A_GAME, "")
-        val winThreeGame = activity.getPref(SharedPrefKeys.WIN_THREE_GAME, "")
+        if (win){
+            activity.putPref(SharedPrefKeys.WIN_THREE_GAME, activity.getPref(SharedPrefKeys.WIN_THREE_GAME, 0) +1)
+        }else {
+            activity.putPref(SharedPrefKeys.WIN_THREE_GAME, 0)
+        }
+
         if (win && score>5 && completeAGame!=""){
             unlockAchievement(R.string.achievement_kwizz_fortune)
         }
@@ -38,7 +43,6 @@ class Achievements(private val activity: Activity) {
         }
 
 
-
         if (score >15){
             unlockAchievement(R.string.achievement_kwizz_beginner)
         }
@@ -47,16 +51,16 @@ class Achievements(private val activity: Activity) {
             unlockAchievement(R.string.achievement_kwizz_full_league)
         }
 
-        if (winThreeGame!=""){
-            unlockIncrementalAchievement(R.string.achievement_on_a_roll, winThreeGame.toInt())
+        if (activity.getPref(SharedPrefKeys.WIN_THREE_GAME, 0)!=0){
+            unlockIncrementalAchievement(R.string.achievement_on_a_roll, activity.getPref(SharedPrefKeys.WIN_THREE_GAME, 0))
         }
 
         if (trueQues >= 10){
             unlockAchievement(R.string.achievement_great_luck)
         }
 
-        if (winThreeGame!=""){
-            unlockIncrementalAchievement(R.string.achievement_10_rounds_back_to_back, winThreeGame.toInt())
+        if (activity.getPref(SharedPrefKeys.WIN_THREE_GAME, 0)!=0){
+            unlockIncrementalAchievement(R.string.achievement_10_rounds_back_to_back, activity.getPref(SharedPrefKeys.WIN_THREE_GAME, 0))
         }
 
     }

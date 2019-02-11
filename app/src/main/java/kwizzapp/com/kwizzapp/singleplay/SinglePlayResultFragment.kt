@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import com.technoholicdeveloper.kwizzapp.achievements.Achievements
 import kwizzapp.com.kwizzapp.Constants
 import kwizzapp.com.kwizzapp.MainActivity
 
@@ -27,6 +28,7 @@ class SinglePlayResultFragment : Fragment() {
     private var noOfQues: Int? = 0
     private lateinit var dataBinding: SinglePlayResultBinding
     private lateinit var singlePlayResultVm: SinglePlayResultVm
+    private lateinit var achievements: Achievements
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +38,7 @@ class SinglePlayResultFragment : Fragment() {
             dropQuestions = it.getInt(Constants.DROP_QUESTIONS)
             noOfQues = it.getInt(NO_OF_QUES)
         }
+        achievements = Achievements(activity!!)
 
     }
 
@@ -54,6 +57,8 @@ class SinglePlayResultFragment : Fragment() {
         dataBinding.singlePlayResultVm?.trueQues = rightAnswers.toString()
         dataBinding.singlePlayResultVm?.falseQues = wrongAnswers.toString()
         dataBinding.singlePlayResultVm?.dropQues = dropQuestions.toString()
+
+        achievements.checkSinglePlayerAchievements(rightAnswers!!)
 
         view.find<Button>(R.id.buttonSinglePlayBack).setOnClickListener{
             startActivity<MainActivity>()
@@ -84,6 +89,4 @@ class SinglePlayResultFragment : Fragment() {
         fun onFragmentInteraction(uri: Uri)
     }
 
-    companion object {
-    }
 }

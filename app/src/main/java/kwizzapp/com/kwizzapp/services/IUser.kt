@@ -19,4 +19,9 @@ interface IUser {
 
     @POST("payu/updateFcmToken.php")
     fun updateFcmToken(@Body updateFcmToken: Users.UpdateFcmToken) : Observable<CommonResult>
+
+    @POST("payu/getProfileData.php")
+    fun getProfileData(@Body profile : Users.Profile) : Observable<Users.ProfileData>
+
+
 }

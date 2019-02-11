@@ -17,9 +17,13 @@ interface ITransaction {
     @POST("payu/subtractBalance.php")
     fun subtractBalance(@Body subtractBalance: Transactions.SubtractBalance): Observable<Transactions.CheckBalance>
 
-    // Subtract Balance
     @POST("payu/updateResultBalance.php")
-    fun updateResultBalance(@Body subtractBalance: Transactions.ResultBalance): Observable<Transactions.CheckBalance>
+    fun updateResultBalance(@Body updateBalance: Transactions.ResultBalance): Observable<Transactions.CheckBalance>
+
+    @POST("payu/updateLoosePoints.php")
+    fun updateLoosePoints(@Body updateLoosePoints: Transactions.UpdateLoosePoints): Observable<Transactions.CheckBalance>
+
+
 
     // Add points to server
     @POST("payu/addPoints.php")
